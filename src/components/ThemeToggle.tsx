@@ -14,22 +14,23 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
   return (
     <Button
       variant="ghost"
-      size="sm"
+      size="icon"
       onClick={toggleTheme}
       className={cn(
-        "relative size-10 rounded-full flex items-center justify-center",
+        "relative size-9 rounded-full flex items-center justify-center hover:bg-primary/20",
         className
       )}
+      title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
     >
       <Sun
         className={cn(
-          "h-5 w-5 transition-all",
+          "h-[1.2rem] w-[1.2rem] transition-all",
           theme === "dark" ? "scale-0 absolute" : "scale-100"
         )}
       />
       <Moon
         className={cn(
-          "h-5 w-5 transition-all",
+          "h-[1.2rem] w-[1.2rem] transition-all",
           theme === "dark" ? "scale-100" : "scale-0 absolute"
         )}
       />
