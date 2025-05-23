@@ -109,33 +109,6 @@ const Blog = () => {
             </Card>
           ))}
         </div>
-        
-        {/* Newsletter Subscription */}
-        <Card className="mt-12 p-8 bg-primary/10 border-primary/20">
-          <div className="text-center max-w-xl mx-auto">
-            <h3 className="text-2xl font-bold mb-2">Subscribe to My Newsletter</h3>
-            <p className="text-muted-foreground mb-6">
-              Stay updated with the latest articles, tutorials, and resources delivered straight to your inbox.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-2">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="flex-1 h-10 px-3 rounded-md border border-border bg-background"
-              />
-              <button 
-                className="px-6 py-2 bg-primary text-primary-foreground font-medium rounded-md hover:bg-primary/90 transition-colors"
-              >
-                Subscribe
-              </button>
-            </div>
-            
-            <p className="text-xs text-muted-foreground mt-4">
-              I'll never send you spam or share your email with third parties.
-            </p>
-          </div>
-        </Card>
       </div>
     </Layout>
   );

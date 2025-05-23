@@ -26,8 +26,8 @@ const Layout = ({ children }: LayoutProps) => {
     <div className="min-h-screen transition-colors duration-300 bg-background text-foreground">
       <ParticleBackground />
       <div className="flex flex-col lg:flex-row max-w-7xl mx-auto p-4 gap-6 relative z-10">
-        {/* Left Profile Card - Fixed position for better scrolling */}
-        <div className="lg:w-80 flex-shrink-0 lg:sticky lg:top-4 lg:self-start">
+        {/* Left Profile Card - Vertically centered and sticky */}
+        <div className="lg:w-80 flex-shrink-0 lg:sticky lg:top-1/4 lg:self-start">
           <Card className="bg-card border-border p-6 text-center shadow-lg">
             {/* Profile Image */}
             <div className="w-32 h-32 mx-auto mb-6 rounded-2xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
@@ -97,7 +97,7 @@ const Layout = ({ children }: LayoutProps) => {
         {/* Right Content Area */}
         <div className="flex-1">
           <Card className="bg-card border-border h-full shadow-lg">
-            {/* Navigation with ThemeToggle moved next to Message */}
+            {/* Navigation with ThemeToggle */}
             <nav className="flex justify-end p-6 border-b border-border">
               <div className="flex gap-8 overflow-x-auto pb-1 items-center">
                 {navLinks.map((link) => (
