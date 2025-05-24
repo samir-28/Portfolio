@@ -1,10 +1,10 @@
-
 import { Link, useLocation } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Calendar, Facebook, Github, Linkedin } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import ParticleBackground from "./ParticleBackground";
 import { cn } from "@/lib/utils";
+import { ColorSchemeSelector } from "./ColorSchemeSelector";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -97,7 +97,7 @@ const Layout = ({ children }: LayoutProps) => {
         {/* Right Content Area */}
         <div className="flex-1">
           <Card className="bg-card border-border shadow-lg min-h-[600px]">
-            {/* Navigation with ThemeToggle */}
+            {/* Navigation with ThemeToggle and ColorSchemeSelector */}
             <nav className="flex justify-end p-6 border-b border-border">
               <div className="flex gap-8 overflow-x-auto pb-1 items-center">
                 {navLinks.map((link) => (
@@ -114,6 +114,7 @@ const Layout = ({ children }: LayoutProps) => {
                     {link.name}
                   </Link>
                 ))}
+                <ColorSchemeSelector />
                 <ThemeToggle />
               </div>
             </nav>
