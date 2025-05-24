@@ -5,17 +5,17 @@
 
 @layer base {
   :root {
-    --background: 57 36% 96%;
+    --background: 0 0% 98%; /* #FBFEE7 converted to HSL */
     --foreground: 222.2 84% 4.9%;
 
-    --card: 251 91% 95%;
+    --card: 0 0% 98%; /* #FBFEE7 */
     --card-foreground: 222.2 84% 4.9%;
 
-    --popover: 251 91% 95%;
+    --popover: 0 0% 98%; /* #FBFEE7 */
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 15 42% 25%;
-    --primary-foreground: 251 91% 95%;
+    --primary: 15 42% 25%; /* #5C2A29 */
+    --primary-foreground: 0 0% 98%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -31,22 +31,22 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 15 42% 25%;
+    --ring: 15 42% 25%; /* #5C2A29 */
 
     --radius: 0.5rem;
 
-    --sidebar-background: 251 91% 95%;
+    --sidebar-background: 0 0% 98%; /* #FBFEE7 */
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 15 42% 25%;
-    --sidebar-primary-foreground: 251 91% 95%;
+    --sidebar-primary: 15 42% 25%; /* #5C2A29 */
+    --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 15 42% 25%;
+    --sidebar-ring: 15 42% 25%; /* #5C2A29 */
   }
 
   .dark {
-    --background: 15 42% 25%;
+    --background: 15 42% 25%; /* #5C2A29 for dark background */
     --foreground: 61 100% 96%;
 
     --card: 15 42% 22%;
@@ -55,7 +55,7 @@
     --popover: 15 42% 22%;
     --popover-foreground: 61 100% 96%;
 
-    --primary: 15 42% 25%;
+    --primary: 15 42% 25%; /* #5C2A29 */
     --primary-foreground: 61 100% 96%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -76,12 +76,12 @@
     
     --sidebar-background: 15 42% 22%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 15 42% 25%;
+    --sidebar-primary: 15 42% 25%; /* #5C2A29 */
     --sidebar-primary-foreground: 61 100% 96%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 15 42% 25%;
+    --sidebar-ring: 15 42% 25%; /* #5C2A29 */
   }
 }
 
