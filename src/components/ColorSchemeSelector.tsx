@@ -6,18 +6,18 @@ import { Palette } from "lucide-react";
 
 interface ColorScheme {
   name: string;
-  background: string;
   primary: string;
 }
 
 const colorSchemes: ColorScheme[] = [
-  { name: "Default", background: "#FFEBDO", primary: "#278783" },
-  { name: "Cream", background: "#FAF5EE", primary: "#1D503A" },
-  { name: "Mint", background: "#DEF8E6", primary: "#D1E0D7" },
-  { name: "Blue", background: "#607EBC", primary: "#DDFEF8" },
-  { name: "Light", background: "#F7F4F", primary: "#30382F" },
-  { name: "Cyan", background: "#6EC6CB", primary: "#E87A64" },
-  { name: "Custom", background: "#1325541", primary: "#278783" },
+  { name: "Default", primary: "#278783" },
+  { name: "Cream", primary: "#1D503A" },
+  { name: "Mint", primary: "#D1E0D7" },
+  { name: "Blue", primary: "#607EBC" },
+  { name: "Light", primary: "#30382F" },
+  { name: "Cyan", primary: "#6EC6CB" },
+  { name: "Orange", primary: "#E87A64" },
+  { name: "Custom", primary: "#1325541" },
 ];
 
 export function ColorSchemeSelector() {
@@ -56,13 +56,9 @@ export function ColorSchemeSelector() {
       return `${Math.round(h * 360)} ${Math.round(s * 100)}% ${Math.round(l * 100)}%`;
     };
 
-    const backgroundHsl = hexToHsl(scheme.background);
     const primaryHsl = hexToHsl(scheme.primary);
 
-    root.style.setProperty('--background', backgroundHsl);
-    root.style.setProperty('--card', backgroundHsl);
-    root.style.setProperty('--popover', backgroundHsl);
-    root.style.setProperty('--sidebar-background', backgroundHsl);
+    // Only change content colors, not backgrounds
     root.style.setProperty('--primary', primaryHsl);
     root.style.setProperty('--sidebar-primary', primaryHsl);
     root.style.setProperty('--ring', primaryHsl);
@@ -94,16 +90,10 @@ export function ColorSchemeSelector() {
                 onClick={() => applyColorScheme(scheme)}
                 className="flex items-center gap-2 p-2 rounded-md hover:bg-accent text-left transition-colors"
               >
-                <div className="flex gap-1">
-                  <div
-                    className="w-4 h-4 rounded-full border border-border"
-                    style={{ backgroundColor: scheme.background }}
-                  />
-                  <div
-                    className="w-4 h-4 rounded-full border border-border"
-                    style={{ backgroundColor: scheme.primary }}
-                  />
-                </div>
+                <div
+                  className="w-6 h-6 rounded-full border border-border"
+                  style={{ backgroundColor: scheme.primary }}
+                />
                 <span className="text-xs">{scheme.name}</span>
               </button>
             ))}

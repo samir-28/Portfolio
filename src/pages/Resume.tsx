@@ -1,9 +1,22 @@
 
 import Layout from "@/components/Layout";
 import { Card } from "@/components/ui/card";
-import { BookOpen, Briefcase, Award, Code } from "lucide-react";
+import { BookOpen, Briefcase, Award, Code, FileText, Palette, Globe, Database, Layout as LayoutIcon, Smartphone } from "lucide-react";
 
 const Resume = () => {
+  const skillsWithIcons = [
+    { name: "HTML", icon: FileText },
+    { name: "CSS", icon: Palette },
+    { name: "JavaScript", icon: Code },
+    { name: "PHP", icon: Database },
+    { name: "WordPress", icon: Globe },
+    { name: "Photoshop", icon: Palette },
+    { name: "Illustrator", icon: Palette },
+    { name: "React", icon: Code },
+    { name: "Tailwind CSS", icon: Palette },
+    { name: "UI/UX Design", icon: LayoutIcon },
+  ];
+
   return (
     <Layout>
       <div className="mb-12">
@@ -93,15 +106,18 @@ const Resume = () => {
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {["HTML", "CSS", "JavaScript", "PHP", "WordPress", "Photoshop", 
-              "Illustrator", "React", "Tailwind CSS", "UI/UX Design"].map((skill) => (
-              <div 
-                key={skill} 
-                className="bg-card/80 border-border rounded-lg py-3 px-4 text-center shadow-sm"
-              >
-                {skill}
-              </div>
-            ))}
+            {skillsWithIcons.map((skill) => {
+              const IconComponent = skill.icon;
+              return (
+                <div 
+                  key={skill.name} 
+                  className="bg-card/80 border-border rounded-lg py-3 px-4 text-center shadow-sm flex flex-col items-center gap-2"
+                >
+                  <IconComponent className="w-6 h-6 text-primary" />
+                  <span className="text-sm">{skill.name}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
         

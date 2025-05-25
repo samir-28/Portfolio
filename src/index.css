@@ -1,16 +1,17 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 60 57% 94%; /* #FFEBDO converted to HSL */
+    --background: 60 57% 94%; /* #F7F4F4 converted to HSL */
     --foreground: 222.2 84% 4.9%;
 
-    --card: 60 57% 94%; /* #FFEBDO */
+    --card: 60 57% 94%; /* #F7F4F4 */
     --card-foreground: 222.2 84% 4.9%;
 
-    --popover: 60 57% 94%; /* #FFEBDO */
+    --popover: 60 57% 94%; /* #F7F4F4 */
     --popover-foreground: 222.2 84% 4.9%;
 
     --primary: 178 48% 34%; /* #278783 */
@@ -34,7 +35,7 @@
 
     --radius: 0.5rem;
 
-    --sidebar-background: 60 57% 94%; /* #FFEBDO */
+    --sidebar-background: 60 57% 94%; /* #F7F4F4 */
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 178 48% 34%; /* #278783 */
     --sidebar-primary-foreground: 0 0% 100%;
@@ -45,35 +46,35 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%; /* Dark background */
-    --foreground: 60 57% 94%;
+    --background: 222.2 84% 4.9%; /* Dark background - fixed */
+    --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 8%;
-    --card-foreground: 60 57% 94%;
+    --card: 222.2 84% 8%; /* Dark card background - fixed */
+    --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 8%;
-    --popover-foreground: 60 57% 94%;
+    --popover: 222.2 84% 8%; /* Dark popover background - fixed */
+    --popover-foreground: 210 40% 98%;
 
     --primary: 178 48% 34%; /* #278783 */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 60 57% 94%;
+    --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
     --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 60 57% 94%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 60 57% 94%;
+    --destructive-foreground: 210 40% 98%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
     
-    --sidebar-background: 222.2 84% 8%;
+    --sidebar-background: 222.2 84% 8%; /* Dark sidebar background - fixed */
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 178 48% 34%; /* #278783 */
     --sidebar-primary-foreground: 0 0% 100%;
