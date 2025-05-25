@@ -26,105 +26,109 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen transition-colors duration-300 bg-background text-foreground">
       <ParticleBackground />
-      <div className="flex flex-col lg:flex-row max-w-7xl mx-auto p-4 gap-6 relative z-10">
-        {/* Left Profile Card - Fixed position */}
-        <div className="lg:w-80 flex-shrink-0 lg:fixed lg:top-4 lg:left-4 lg:h-fit lg:max-w-80">
-          <Card className="bg-card border-border p-6 text-center shadow-lg">
-            {/* Profile Image */}
-            <div className="w-32 h-32 mx-auto mb-6 rounded-2xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
-              <img 
-                src="/lovable-uploads/c472a97e-1418-4f1c-93b0-f7714d7e53d7.png" 
-                alt="Samir Bajgain"
-                className="w-full h-full object-cover"
-              />
+      <div className="max-w-7xl mx-auto p-4 relative z-10">
+        <div className="flex flex-col lg:flex-row gap-6">
+          {/* Left Profile Card - Fixed width and position */}
+          <div className="lg:w-80 flex-shrink-0">
+            <div className="lg:fixed lg:w-80">
+              <Card className="bg-card border-border p-6 text-center shadow-lg">
+                {/* Profile Image */}
+                <div className="w-32 h-32 mx-auto mb-6 rounded-2xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
+                  <img 
+                    src="/lovable-uploads/c472a97e-1418-4f1c-93b0-f7714d7e53d7.png" 
+                    alt="Samir Bajgain"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                {/* Name and Title */}
+                <h1 className="text-2xl font-bold mb-2">Samir Bajgain</h1>
+                <p className="text-muted-foreground mb-8">Student</p>
+                
+                {/* Contact Information */}
+                <div className="space-y-4 text-left">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                      <Mail className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground uppercase tracking-wide">EMAIL</p>
+                      <p className="text-sm">samirbajgain9@gmail.com</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                      <Phone className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground uppercase tracking-wide">PHONE</p>
+                      <p className="text-sm">+977 9818160291</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                      <Calendar className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground uppercase tracking-wide">BIRTHDAY</p>
+                      <p className="text-sm">2003</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                      <MapPin className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-muted-foreground uppercase tracking-wide">LOCATION</p>
+                      <p className="text-sm">Kathmandu, Nepal</p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Social Media */}
+                <div className="flex justify-center gap-4 mt-8 pt-6 border-t border-border">
+                  <Facebook className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
+                  <Github className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
+                  <Linkedin className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
+                </div>
+              </Card>
             </div>
-            
-            {/* Name and Title */}
-            <h1 className="text-2xl font-bold mb-2">Samir Bajgain</h1>
-            <p className="text-muted-foreground mb-8">Student</p>
-            
-            {/* Contact Information */}
-            <div className="space-y-4 text-left">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
-                  <Mail className="w-5 h-5 text-primary" />
+          </div>
+          
+          {/* Right Content Area */}
+          <div className="flex-1">
+            <Card className="bg-card border-border shadow-lg min-h-[600px]">
+              {/* Navigation with ThemeToggle and ColorSchemeSelector */}
+              <nav className="flex justify-end p-6 border-b border-border">
+                <div className="flex gap-8 overflow-x-auto pb-1 items-center">
+                  {navLinks.map((link) => (
+                    <Link 
+                      key={link.name} 
+                      to={link.path} 
+                      className={cn(
+                        "text-sm font-medium transition-colors",
+                        path === link.path 
+                          ? "text-primary font-medium" 
+                          : "text-muted-foreground hover:text-primary"
+                      )}
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                  <ColorSchemeSelector />
+                  <ThemeToggle />
                 </div>
-                <div>
-                  <p className="text-xs text-muted-foreground uppercase tracking-wide">EMAIL</p>
-                  <p className="text-sm">samirbajgain9@gmail.com</p>
-                </div>
-              </div>
+              </nav>
               
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
-                  <Phone className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground uppercase tracking-wide">PHONE</p>
-                  <p className="text-sm">+977 9818160291</p>
-                </div>
+              {/* Content */}
+              <div className="p-6">
+                {children}
               </div>
-              
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
-                  <Calendar className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground uppercase tracking-wide">BIRTHDAY</p>
-                  <p className="text-sm">2003</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground uppercase tracking-wide">LOCATION</p>
-                  <p className="text-sm">Kathmandu, Nepal</p>
-                </div>
-              </div>
-            </div>
-            
-            {/* Social Media */}
-            <div className="flex justify-center gap-4 mt-8 pt-6 border-t border-border">
-              <Facebook className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
-              <Github className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
-              <Linkedin className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
-            </div>
-          </Card>
-        </div>
-        
-        {/* Right Content Area - with left margin to account for fixed sidebar */}
-        <div className="flex-1 lg:ml-96">
-          <Card className="bg-card border-border shadow-lg min-h-[600px]">
-            {/* Navigation with ThemeToggle and ColorSchemeSelector */}
-            <nav className="flex justify-end p-6 border-b border-border">
-              <div className="flex gap-8 overflow-x-auto pb-1 items-center">
-                {navLinks.map((link) => (
-                  <Link 
-                    key={link.name} 
-                    to={link.path} 
-                    className={cn(
-                      "text-sm font-medium transition-colors",
-                      path === link.path 
-                        ? "text-primary font-medium" 
-                        : "text-muted-foreground hover:text-primary"
-                    )}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-                <ColorSchemeSelector />
-                <ThemeToggle />
-              </div>
-            </nav>
-            
-            {/* Content */}
-            <div className="p-6">
-              {children}
-            </div>
-          </Card>
+            </Card>
+          </div>
         </div>
       </div>
     </div>
