@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { ExternalLink, Maximize } from "lucide-react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 interface Project {
   id: number;
@@ -78,7 +77,6 @@ const Portfolio = () => {
     if (project.link && project.link !== "#") {
       window.open(project.link, "_blank");
     } else {
-      // Redirect to not found page if project link is not available
       window.location.href = "/404";
     }
   };
@@ -109,45 +107,39 @@ const Portfolio = () => {
           </ToggleGroup>
         </div>
         
-        {/* Projects Carousel */}
-        <Carousel className="w-full">
-          <CarouselContent>
-            {filteredProjects.map((project) => (
-              <CarouselItem key={project.id} className="md:basis-1/2 lg:basis-1/3">
-                <Card className="group overflow-hidden bg-card/80 border-border cursor-pointer transition-all duration-300 hover:shadow-lg">
-                  <div className="relative overflow-hidden h-52" onClick={() => setSelectedProject(project)}>
-                    <img 
-                      src={project.image} 
-                      alt={project.title} 
-                      className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="text-white text-center p-4">
-                        <Maximize className="mx-auto mb-2" size={24} />
-                        <p className="font-medium">View Details</p>
-                      </div>
-                    </div>
+        {/* Projects Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredProjects.map((project) => (
+            <Card key={project.id} className="group overflow-hidden bg-card/80 border-border cursor-pointer transition-all duration-300 hover:shadow-lg">
+              <div className="relative overflow-hidden h-52" onClick={() => setSelectedProject(project)}>
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="text-white text-center p-4">
+                    <Maximize className="mx-auto mb-2" size={24} />
+                    <p className="font-medium">View Details</p>
                   </div>
-                  <div className="p-4">
-                    <h3 className="font-semibold text-lg mb-2">{project.title}</h3>
-                    <p className="text-sm text-muted-foreground mb-3">{project.description}</p>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleViewProject(project);
-                      }}
-                      className="inline-flex items-center gap-2 px-3 py-1 text-sm bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
-                    >
-                      View Project <ExternalLink size={14} />
-                    </button>
-                  </div>
-                </Card>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+                </div>
+              </div>
+              <div className="p-4">
+                <h3 className="font-semibold text-lg mb-2">{project.title}</h3>
+                <p className="text-sm text-muted-foreground mb-3">{project.description}</p>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleViewProject(project);
+                  }}
+                  className="inline-flex items-center gap-2 px-3 py-1 text-sm bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
+                >
+                  View Project <ExternalLink size={14} />
+                </button>
+              </div>
+            </Card>
+          ))}
+        </div>
         
         {/* Project Modal */}
         {selectedProject && (
