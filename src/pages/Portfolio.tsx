@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { ExternalLink, Maximize } from "lucide-react";
-import { useTheme } from "@/components/ThemeProvider";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 interface Project {
   id: number;
@@ -16,8 +16,6 @@ interface Project {
 }
 
 const Portfolio = () => {
-  const { theme } = useTheme();
-  
   const projects: Project[] = [
     {
       id: 1,
@@ -76,14 +74,25 @@ const Portfolio = () => {
     ? projects 
     : projects.filter(project => project.category === filter);
 
+  const handleViewProject = (project: Project) => {
+    if (project.link && project.link !== "#") {
+      window.open(project.link, "_blank");
+    } else {
+      // Redirect to not found page if project link is not available
+      window.location.href = "/404";
+    }
+  };
+
   return (
     <Layout>
-      <div className="mb-12">
-        <h2 className="text-3xl font-bold mb-4">My Portfolio</h2>
-        <div className="w-12 h-1 bg-primary mb-6"></div>
+      <div className="space-y-8">
+        <div>
+          <h2 className="text-3xl font-bold mb-4">My Portfolio</h2>
+          <div className="w-12 h-1 bg-primary mb-6"></div>
+        </div>
         
         {/* Filter Buttons */}
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center">
           <ToggleGroup type="single" value={filter} onValueChange={(value) => value && setFilter(value)}>
             <ToggleGroupItem value="all" aria-label="All" className="px-4">
               All
@@ -100,34 +109,45 @@ const Portfolio = () => {
           </ToggleGroup>
         </div>
         
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project) => (
-            <Card 
-              key={project.id} 
-              className="group overflow-hidden bg-card/80 border-border cursor-pointer transition-all duration-300 hover:shadow-lg"
-              onClick={() => setSelectedProject(project)}
-            >
-              <div className="relative overflow-hidden h-52">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="text-white text-center p-4">
-                    <Maximize className="mx-auto mb-2" size={24} />
-                    <p className="font-medium">View Details</p>
+        {/* Projects Carousel */}
+        <Carousel className="w-full">
+          <CarouselContent>
+            {filteredProjects.map((project) => (
+              <CarouselItem key={project.id} className="md:basis-1/2 lg:basis-1/3">
+                <Card className="group overflow-hidden bg-card/80 border-border cursor-pointer transition-all duration-300 hover:shadow-lg">
+                  <div className="relative overflow-hidden h-52" onClick={() => setSelectedProject(project)}>
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="text-white text-center p-4">
+                        <Maximize className="mx-auto mb-2" size={24} />
+                        <p className="font-medium">View Details</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div className="p-4">
-                <h3 className="font-semibold text-lg">{project.title}</h3>
-                <p className="text-sm text-muted-foreground mt-1">{project.description}</p>
-              </div>
-            </Card>
-          ))}
-        </div>
+                  <div className="p-4">
+                    <h3 className="font-semibold text-lg mb-2">{project.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-3">{project.description}</p>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleViewProject(project);
+                      }}
+                      className="inline-flex items-center gap-2 px-3 py-1 text-sm bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
+                    >
+                      View Project <ExternalLink size={14} />
+                    </button>
+                  </div>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
         
         {/* Project Modal */}
         {selectedProject && (
@@ -173,14 +193,12 @@ const Portfolio = () => {
                   Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
                 </p>
                 
-                <a
-                  href={selectedProject.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => handleViewProject(selectedProject)}
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
                 >
                   View Project <ExternalLink size={16} />
-                </a>
+                </button>
               </div>
             </div>
           </div>
