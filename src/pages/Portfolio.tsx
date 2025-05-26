@@ -92,16 +92,16 @@ const Portfolio = () => {
         {/* Filter Buttons */}
         <div className="flex justify-center">
           <ToggleGroup type="single" value={filter} onValueChange={(value) => value && setFilter(value)}>
-            <ToggleGroupItem value="all" aria-label="All" className="px-4">
+            <ToggleGroupItem value="all" aria-label="All" className="px-4 transition-all duration-300 hover:scale-105">
               All
             </ToggleGroupItem>
-            <ToggleGroupItem value="web" aria-label="Web" className="px-4">
+            <ToggleGroupItem value="web" aria-label="Web" className="px-4 transition-all duration-300 hover:scale-105">
               Web
             </ToggleGroupItem>
-            <ToggleGroupItem value="design" aria-label="Design" className="px-4">
+            <ToggleGroupItem value="design" aria-label="Design" className="px-4 transition-all duration-300 hover:scale-105">
               Design
             </ToggleGroupItem>
-            <ToggleGroupItem value="photography" aria-label="Photography" className="px-4">
+            <ToggleGroupItem value="photography" aria-label="Photography" className="px-4 transition-all duration-300 hover:scale-105">
               Photography
             </ToggleGroupItem>
           </ToggleGroup>
@@ -110,32 +110,28 @@ const Portfolio = () => {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project) => (
-            <Card key={project.id} className="group overflow-hidden bg-card/80 border-border cursor-pointer transition-all duration-300 hover:shadow-lg">
+            <Card key={project.id} className="group overflow-hidden bg-card/80 border-border cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-105">
               <div className="relative overflow-hidden h-52" onClick={() => setSelectedProject(project)}>
                 <img 
                   src={project.image} 
                   alt={project.title} 
                   className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="text-white text-center p-4">
-                    <Maximize className="mx-auto mb-2" size={24} />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                  <div className="text-white text-center p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <Maximize className="mx-auto mb-2 animate-pulse" size={24} />
                     <p className="font-medium">View Details</p>
                   </div>
                 </div>
               </div>
               <div className="p-4">
-                <h3 className="font-semibold text-lg mb-2">{project.title}</h3>
+                <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
                 <p className="text-sm text-muted-foreground mb-3">{project.description}</p>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleViewProject(project);
-                  }}
-                  className="inline-flex items-center gap-2 px-3 py-1 text-sm bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
-                >
-                  View Project <ExternalLink size={14} />
-                </button>
+                <div className="flex items-center gap-2">
+                  <div className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full capitalize font-medium">
+                    {project.category}
+                  </div>
+                </div>
               </div>
             </Card>
           ))}
@@ -144,11 +140,11 @@ const Portfolio = () => {
         {/* Project Modal */}
         {selectedProject && (
           <div 
-            className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in"
             onClick={() => setSelectedProject(null)}
           >
             <div 
-              className="relative bg-card border border-border rounded-lg shadow-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto"
+              className="relative bg-card border border-border rounded-lg shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto animate-scale-in"
               onClick={(e) => e.stopPropagation()}
             >
               <img 
@@ -157,7 +153,7 @@ const Portfolio = () => {
                 className="w-full h-64 object-cover"
               />
               <button 
-                className="absolute top-4 right-4 bg-card/80 rounded-full p-2 text-foreground hover:text-primary transition-colors"
+                className="absolute top-4 right-4 bg-card/90 backdrop-blur-sm rounded-full p-2 text-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover:rotate-90"
                 onClick={() => setSelectedProject(null)}
               >
                 <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -165,21 +161,23 @@ const Portfolio = () => {
                 </svg>
               </button>
               <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2">{selectedProject.title}</h3>
+                <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-primary to-yellow-500 bg-clip-text text-transparent">
+                  {selectedProject.title}
+                </h3>
                 <p className="text-muted-foreground mb-6">{selectedProject.description}</p>
                 
                 <div className="grid md:grid-cols-2 gap-4 mb-6">
-                  <div>
-                    <p className="font-medium">Category</p>
+                  <div className="p-4 bg-muted/50 rounded-lg">
+                    <p className="font-medium text-primary">Category</p>
                     <p className="text-muted-foreground capitalize">{selectedProject.category}</p>
                   </div>
-                  <div>
-                    <p className="font-medium">Project Date</p>
+                  <div className="p-4 bg-muted/50 rounded-lg">
+                    <p className="font-medium text-primary">Project Date</p>
                     <p className="text-muted-foreground">2023</p>
                   </div>
                 </div>
                 
-                <p className="mb-6">
+                <p className="mb-6 leading-relaxed">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, 
                   a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. 
                   Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
@@ -187,7 +185,7 @@ const Portfolio = () => {
                 
                 <button
                   onClick={() => handleViewProject(selectedProject)}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-primary to-primary/80 text-primary-foreground hover:from-primary/90 hover:to-primary/70 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   View Project <ExternalLink size={16} />
                 </button>

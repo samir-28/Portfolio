@@ -1,7 +1,7 @@
 
 import Layout from "@/components/Layout";
 import { Card } from "@/components/ui/card";
-import { BookOpen, Briefcase, Award, Code, ExternalLink } from "lucide-react";
+import { BookOpen, Briefcase, Award, Code } from "lucide-react";
 
 const Resume = () => {
   const skillsWithFavicons = [
@@ -16,16 +16,6 @@ const Resume = () => {
     { name: "Tailwind CSS", favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" },
     { name: "UI/UX Design", favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
   ];
-
-  const handleViewProject = (projectName: string) => {
-    const availableProjects = ["Web Development Fundamentals", "WordPress Development"];
-    
-    if (availableProjects.includes(projectName)) {
-      window.open("#", "_blank");
-    } else {
-      window.location.href = "/404";
-    }
-  };
 
   return (
     <Layout>
@@ -119,11 +109,11 @@ const Resume = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {skillsWithFavicons.map((skill) => (
-              <Card key={skill.name} className="p-4 bg-card/80 border-border text-center shadow-sm flex flex-col items-center gap-2">
+              <Card key={skill.name} className="p-4 bg-card/80 border-border text-center shadow-sm flex flex-col items-center gap-2 hover:shadow-lg hover:scale-105 transition-all duration-300">
                 <img 
                   src={skill.favicon} 
                   alt={skill.name}
-                  className="w-8 h-8"
+                  className="w-8 h-8 transition-transform duration-300 hover:scale-110"
                   onError={(e) => {
                     e.currentTarget.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Ccode%3E%3C/code%3E%3C/svg%3E";
                   }}
@@ -142,7 +132,7 @@ const Resume = () => {
           </div>
           
           <div className="space-y-4">
-            <Card className="p-4 bg-card/80 border-border flex items-center gap-4">
+            <Card className="p-4 bg-card/80 border-border flex items-center gap-4 hover:shadow-lg transition-all duration-300">
               <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
                 <Award className="text-primary w-5 h-5" />
               </div>
@@ -150,15 +140,9 @@ const Resume = () => {
                 <h4 className="font-medium">Web Development Fundamentals</h4>
                 <p className="text-sm text-muted-foreground">Coursera - 2021</p>
               </div>
-              <button
-                onClick={() => handleViewProject("Web Development Fundamentals")}
-                className="inline-flex items-center gap-2 px-3 py-1 text-sm bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
-              >
-                View Project <ExternalLink size={14} />
-              </button>
             </Card>
             
-            <Card className="p-4 bg-card/80 border-border flex items-center gap-4">
+            <Card className="p-4 bg-card/80 border-border flex items-center gap-4 hover:shadow-lg transition-all duration-300">
               <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
                 <Award className="text-primary w-5 h-5" />
               </div>
@@ -166,15 +150,9 @@ const Resume = () => {
                 <h4 className="font-medium">Graphic Design Principles</h4>
                 <p className="text-sm text-muted-foreground">Udemy - 2022</p>
               </div>
-              <button
-                onClick={() => handleViewProject("Graphic Design Principles")}
-                className="inline-flex items-center gap-2 px-3 py-1 text-sm bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
-              >
-                View Project <ExternalLink size={14} />
-              </button>
             </Card>
             
-            <Card className="p-4 bg-card/80 border-border flex items-center gap-4">
+            <Card className="p-4 bg-card/80 border-border flex items-center gap-4 hover:shadow-lg transition-all duration-300">
               <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
                 <Award className="text-primary w-5 h-5" />
               </div>
@@ -182,12 +160,6 @@ const Resume = () => {
                 <h4 className="font-medium">WordPress Development</h4>
                 <p className="text-sm text-muted-foreground">WP Academy - 2022</p>
               </div>
-              <button
-                onClick={() => handleViewProject("WordPress Development")}
-                className="inline-flex items-center gap-2 px-3 py-1 text-sm bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
-              >
-                View Project <ExternalLink size={14} />
-              </button>
             </Card>
           </div>
         </div>
