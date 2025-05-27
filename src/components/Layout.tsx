@@ -57,12 +57,12 @@ const Layout = ({ children }: LayoutProps) => {
     <div className="min-h-screen transition-colors duration-300 bg-background text-foreground">
       <ParticleBackground />
       <div className="max-w-7xl mx-auto p-4 relative z-10">
-        {/* Clean Navbar - just image, name, and icons */}
-        <Card className="bg-card border-border mb-6 shadow-lg overflow-hidden">
+        {/* Top Navbar with all content */}
+        <Card className="bg-card mb-6 shadow-lg overflow-hidden">
           <div className="p-8 h-80 flex items-center justify-between">
             {/* Profile Image */}
             <div className="flex items-center">
-              <div className="w-60 h-60 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
+              <div className="w-48 h-48 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
                 <img 
                   src="/lovable-uploads/c472a97e-1418-4f1c-93b0-f7714d7e53d7.png" 
                   alt="Samir Bajgain"
@@ -71,22 +71,46 @@ const Layout = ({ children }: LayoutProps) => {
               </div>
             </div>
             
-            {/* Name in Center */}
-            <div className="flex-1 flex flex-col items-center gap-4">
+            {/* Name and Navigation Links in Center */}
+            <div className="flex-1 flex flex-col items-center gap-6">
               <div className="text-center">
                 <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-yellow-500 bg-clip-text text-transparent">
                   Samir Bajgain
                 </h1>
                 <p className="text-muted-foreground text-xl mt-2">Student</p>
               </div>
+              
+              {/* Navigation Links */}
+              <div className="flex justify-center gap-8">
+                {navLinks.map((link) => (
+                  <Link 
+                    key={link.name} 
+                    to={link.path}
+                    className={cn(
+                      "relative text-sm font-medium pb-1 transition-colors duration-200",
+                      path === link.path 
+                        ? "text-primary border-b-2 border-primary" 
+                        : "text-muted-foreground hover:text-primary"
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
             </div>
             
-            {/* Vertical Icons */}
+            {/* Social Icons and Theme Controls */}
             <div className="flex flex-col items-center gap-4">
               <div className="flex flex-col gap-3">
                 <Facebook className="w-6 h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
                 <Github className="w-6 h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
                 <Linkedin className="w-6 h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
+              </div>
+              
+              {/* Theme controls */}
+              <div className="flex flex-col gap-2">
+                <ColorSchemeSelector />
+                <ThemeToggle />
               </div>
             </div>
           </div>
@@ -129,35 +153,6 @@ const Layout = ({ children }: LayoutProps) => {
             >
               <ChevronRight className="w-6 h-6" />
             </button>
-          </div>
-          
-          {/* Bottom Navigation */}
-          <div className="p-6 border-t border-border">
-            {/* Navigation Links and Theme Controls at top of bottom section */}
-            <div className="flex justify-between items-center mb-6">
-              <div className="flex justify-center gap-8 flex-1">
-                {navLinks.map((link) => (
-                  <Link 
-                    key={link.name} 
-                    to={link.path}
-                    className={cn(
-                      "relative text-sm font-medium pb-1",
-                      path === link.path 
-                        ? "text-primary border-b-2 border-primary" 
-                        : "text-muted-foreground hover:text-primary"
-                    )}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
-              
-              {/* Theme controls */}
-              <div className="flex gap-2">
-                <ColorSchemeSelector />
-                <ThemeToggle />
-              </div>
-            </div>
           </div>
         </Card>
         
