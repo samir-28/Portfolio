@@ -57,12 +57,12 @@ const Layout = ({ children }: LayoutProps) => {
     <div className="min-h-screen transition-colors duration-300 bg-background text-foreground">
       <ParticleBackground />
       <div className="max-w-7xl mx-auto p-4 relative z-10">
-        {/* Enhanced Navbar */}
+        {/* Clean Navbar - just image, name, and icons */}
         <Card className="bg-card border-border mb-6 shadow-lg overflow-hidden">
-          <div className="p-8 h-64 flex items-center justify-between">
+          <div className="p-8 h-80 flex items-center justify-between">
             {/* Profile Image */}
             <div className="flex items-center">
-              <div className="w-48 h-48 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
+              <div className="w-80 h-80 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
                 <img 
                   src="/lovable-uploads/c472a97e-1418-4f1c-93b0-f7714d7e53d7.png" 
                   alt="Samir Bajgain"
@@ -71,31 +71,13 @@ const Layout = ({ children }: LayoutProps) => {
               </div>
             </div>
             
-            {/* Name and Navigation */}
-            <div className="flex-1 flex flex-col items-center gap-8">
+            {/* Name in Center */}
+            <div className="flex-1 flex flex-col items-center gap-4">
               <div className="text-center">
                 <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-yellow-500 bg-clip-text text-transparent">
                   Samir Bajgain
                 </h1>
                 <p className="text-muted-foreground text-xl mt-2">Student</p>
-              </div>
-              
-              {/* Navigation Links - Clean without animations */}
-              <div className="flex gap-2">
-                {navLinks.map((link) => (
-                  <Link 
-                    key={link.name} 
-                    to={link.path}
-                    className={cn(
-                      "px-6 py-3 text-sm font-medium transition-colors duration-200 whitespace-nowrap rounded-lg",
-                      path === link.path 
-                        ? "bg-primary text-primary-foreground" 
-                        : "text-muted-foreground hover:text-primary hover:bg-primary/10"
-                    )}
-                  >
-                    <span className="font-semibold">{link.name}</span>
-                  </Link>
-                ))}
               </div>
             </div>
             
@@ -122,39 +104,57 @@ const Layout = ({ children }: LayoutProps) => {
             </div>
           </div>
           
-          {/* Bottom Navigation Buttons */}
-          <div className="p-6 flex justify-between items-center border-t border-border">
-            <button
-              onClick={goToPrevious}
-              disabled={currentIndex === 0}
-              className={cn(
-                "flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300",
-                currentIndex === 0 
-                  ? "opacity-50 cursor-not-allowed" 
-                  : "hover:bg-primary/10 hover:text-primary"
-              )}
-            >
-              <ChevronLeft className="w-5 h-5" />
-              <span>Previous</span>
-            </button>
+          {/* Navigation Links with underline effect */}
+          <div className="p-6 border-t border-border">
+            <div className="flex justify-center gap-8 mb-6">
+              {navLinks.map((link) => (
+                <Link 
+                  key={link.name} 
+                  to={link.path}
+                  className={cn(
+                    "relative text-sm font-medium transition-colors duration-200 pb-1",
+                    path === link.path 
+                      ? "text-primary after:content-[''] after:absolute after:w-full after:h-0.5 after:bottom-0 after:left-0 after:bg-primary" 
+                      : "text-muted-foreground hover:text-primary after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+                  )}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+            
+            {/* Previous/Next buttons centered */}
+            <div className="flex justify-center items-center gap-8">
+              <button
+                onClick={goToPrevious}
+                disabled={currentIndex === 0}
+                className={cn(
+                  "p-3 rounded-lg transition-all duration-300",
+                  currentIndex === 0 
+                    ? "opacity-50 cursor-not-allowed" 
+                    : "hover:bg-primary/10 hover:text-primary"
+                )}
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
 
-            <button
-              onClick={goToNext}
-              disabled={currentIndex === navLinks.length - 1}
-              className={cn(
-                "flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300",
-                currentIndex === navLinks.length - 1 
-                  ? "opacity-50 cursor-not-allowed" 
-                  : "hover:bg-primary/10 hover:text-primary"
-              )}
-            >
-              <span>Next</span>
-              <ChevronRight className="w-5 h-5" />
-            </button>
+              <button
+                onClick={goToNext}
+                disabled={currentIndex === navLinks.length - 1}
+                className={cn(
+                  "p-3 rounded-lg transition-all duration-300",
+                  currentIndex === navLinks.length - 1 
+                    ? "opacity-50 cursor-not-allowed" 
+                    : "hover:bg-primary/10 hover:text-primary"
+                )}
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </div>
           </div>
         </Card>
         
-        {/* Footer */}
+        {/* Footer with contact details */}
         <Card className="bg-card border-border mt-6 shadow-lg overflow-hidden">
           <div className="p-6 flex items-center justify-center">
             <div className="flex flex-wrap gap-8 text-sm">
