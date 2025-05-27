@@ -62,7 +62,7 @@ const Layout = ({ children }: LayoutProps) => {
           <div className="p-8 h-80 flex items-center justify-between">
             {/* Profile Image */}
             <div className="flex items-center">
-              <div className="w-80 h-80 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
+              <div className="w-60 h-60 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
                 <img 
                   src="/lovable-uploads/c472a97e-1418-4f1c-93b0-f7714d7e53d7.png" 
                   alt="Samir Bajgain"
@@ -81,75 +81,82 @@ const Layout = ({ children }: LayoutProps) => {
               </div>
             </div>
             
-            {/* Vertical Icons and Theme controls */}
+            {/* Vertical Icons */}
             <div className="flex flex-col items-center gap-4">
               <div className="flex flex-col gap-3">
                 <Facebook className="w-6 h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
                 <Github className="w-6 h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
                 <Linkedin className="w-6 h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
               </div>
-              <div className="flex flex-col gap-2">
-                <ColorSchemeSelector />
-                <ThemeToggle />
-              </div>
             </div>
           </div>
         </Card>
         
-        {/* Main Content Area */}
-        <Card className="bg-card border-border shadow-lg min-h-[600px] overflow-hidden">
+        {/* Main Content Area with centered navigation buttons */}
+        <Card className="bg-card border-border shadow-lg min-h-[600px] overflow-hidden relative">
           <div className="p-6">
             <div className="transition-all duration-300">
               {children}
             </div>
           </div>
           
-          {/* Navigation Links with underline effect */}
-          <div className="p-6 border-t border-border">
-            <div className="flex justify-center gap-8 mb-6">
-              {navLinks.map((link) => (
-                <Link 
-                  key={link.name} 
-                  to={link.path}
-                  className={cn(
-                    "relative text-sm font-medium transition-colors duration-200 pb-1",
-                    path === link.path 
-                      ? "text-primary after:content-[''] after:absolute after:w-full after:h-0.5 after:bottom-0 after:left-0 after:bg-primary" 
-                      : "text-muted-foreground hover:text-primary after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-                  )}
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-            
-            {/* Previous/Next buttons centered */}
-            <div className="flex justify-center items-center gap-8">
-              <button
-                onClick={goToPrevious}
-                disabled={currentIndex === 0}
-                className={cn(
-                  "p-3 rounded-lg transition-all duration-300",
-                  currentIndex === 0 
-                    ? "opacity-50 cursor-not-allowed" 
-                    : "hover:bg-primary/10 hover:text-primary"
-                )}
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
+          {/* Vertically centered Previous/Next buttons */}
+          <div className="absolute top-1/2 left-4 transform -translate-y-1/2">
+            <button
+              onClick={goToPrevious}
+              disabled={currentIndex === 0}
+              className={cn(
+                "p-3 rounded-lg transition-all duration-300",
+                currentIndex === 0 
+                  ? "opacity-50 cursor-not-allowed" 
+                  : "hover:bg-primary/10 hover:text-primary"
+              )}
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+          </div>
 
-              <button
-                onClick={goToNext}
-                disabled={currentIndex === navLinks.length - 1}
-                className={cn(
-                  "p-3 rounded-lg transition-all duration-300",
-                  currentIndex === navLinks.length - 1 
-                    ? "opacity-50 cursor-not-allowed" 
-                    : "hover:bg-primary/10 hover:text-primary"
-                )}
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
+          <div className="absolute top-1/2 right-4 transform -translate-y-1/2">
+            <button
+              onClick={goToNext}
+              disabled={currentIndex === navLinks.length - 1}
+              className={cn(
+                "p-3 rounded-lg transition-all duration-300",
+                currentIndex === navLinks.length - 1 
+                  ? "opacity-50 cursor-not-allowed" 
+                  : "hover:bg-primary/10 hover:text-primary"
+              )}
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+          
+          {/* Bottom Navigation */}
+          <div className="p-6 border-t border-border">
+            {/* Navigation Links and Theme Controls at top of bottom section */}
+            <div className="flex justify-between items-center mb-6">
+              <div className="flex justify-center gap-8 flex-1">
+                {navLinks.map((link) => (
+                  <Link 
+                    key={link.name} 
+                    to={link.path}
+                    className={cn(
+                      "relative text-sm font-medium pb-1",
+                      path === link.path 
+                        ? "text-primary border-b-2 border-primary" 
+                        : "text-muted-foreground hover:text-primary"
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+              
+              {/* Theme controls */}
+              <div className="flex gap-2">
+                <ColorSchemeSelector />
+                <ThemeToggle />
+              </div>
             </div>
           </div>
         </Card>
