@@ -6,7 +6,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import ParticleBackground from "./ParticleBackground";
 import { cn } from "@/lib/utils";
 import { ColorSchemeSelector } from "./ColorSchemeSelector";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -59,10 +59,10 @@ const Layout = ({ children }: LayoutProps) => {
       <div className="max-w-7xl mx-auto p-4 relative z-10">
         {/* Enhanced Navbar */}
         <Card className="bg-card border-border mb-6 shadow-lg overflow-hidden">
-          <div className="p-8 h-48 flex items-center justify-between">
+          <div className="p-8 h-64 flex items-center justify-between">
             {/* Profile Image */}
             <div className="flex items-center">
-              <div className="w-32 h-32 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
+              <div className="w-48 h-48 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
                 <img 
                   src="/lovable-uploads/c472a97e-1418-4f1c-93b0-f7714d7e53d7.png" 
                   alt="Samir Bajgain"
@@ -72,60 +72,30 @@ const Layout = ({ children }: LayoutProps) => {
             </div>
             
             {/* Name and Navigation */}
-            <div className="flex-1 flex flex-col items-center gap-6">
+            <div className="flex-1 flex flex-col items-center gap-8">
               <div className="text-center">
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-yellow-500 bg-clip-text text-transparent">
+                <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-yellow-500 bg-clip-text text-transparent">
                   Samir Bajgain
                 </h1>
-                <p className="text-muted-foreground text-lg">Student</p>
+                <p className="text-muted-foreground text-xl mt-2">Student</p>
               </div>
               
-              {/* Navigation Links */}
-              <div className="flex items-center gap-4">
-                {/* Previous Button */}
-                <button
-                  onClick={goToPrevious}
-                  disabled={currentIndex === 0}
-                  className={cn(
-                    "p-2 rounded-lg transition-all duration-300",
-                    currentIndex === 0 
-                      ? "opacity-50 cursor-not-allowed" 
-                      : "hover:bg-primary/20 hover:scale-110"
-                  )}
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </button>
-
-                <div className="flex gap-2">
-                  {navLinks.map((link) => (
-                    <Link 
-                      key={link.name} 
-                      to={link.path}
-                      className={cn(
-                        "px-6 py-3 text-sm font-medium transition-all duration-300 whitespace-nowrap rounded-lg",
-                        path === link.path 
-                          ? "bg-gradient-to-r from-primary to-primary/80 text-primary-foreground shadow-lg" 
-                          : "text-muted-foreground hover:text-primary hover:bg-primary/10"
-                      )}
-                    >
-                      <span className="font-semibold">{link.name}</span>
-                    </Link>
-                  ))}
-                </div>
-
-                {/* Next Button */}
-                <button
-                  onClick={goToNext}
-                  disabled={currentIndex === navLinks.length - 1}
-                  className={cn(
-                    "p-2 rounded-lg transition-all duration-300",
-                    currentIndex === navLinks.length - 1 
-                      ? "opacity-50 cursor-not-allowed" 
-                      : "hover:bg-primary/20 hover:scale-110"
-                  )}
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
+              {/* Navigation Links - Clean without animations */}
+              <div className="flex gap-2">
+                {navLinks.map((link) => (
+                  <Link 
+                    key={link.name} 
+                    to={link.path}
+                    className={cn(
+                      "px-6 py-3 text-sm font-medium transition-colors duration-200 whitespace-nowrap rounded-lg",
+                      path === link.path 
+                        ? "bg-primary text-primary-foreground" 
+                        : "text-muted-foreground hover:text-primary hover:bg-primary/10"
+                    )}
+                  >
+                    <span className="font-semibold">{link.name}</span>
+                  </Link>
+                ))}
               </div>
             </div>
             
@@ -150,6 +120,37 @@ const Layout = ({ children }: LayoutProps) => {
             <div className="transition-all duration-300">
               {children}
             </div>
+          </div>
+          
+          {/* Bottom Navigation Buttons */}
+          <div className="p-6 flex justify-between items-center border-t border-border">
+            <button
+              onClick={goToPrevious}
+              disabled={currentIndex === 0}
+              className={cn(
+                "flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300",
+                currentIndex === 0 
+                  ? "opacity-50 cursor-not-allowed" 
+                  : "hover:bg-primary/10 hover:text-primary"
+              )}
+            >
+              <ChevronLeft className="w-5 h-5" />
+              <span>Previous</span>
+            </button>
+
+            <button
+              onClick={goToNext}
+              disabled={currentIndex === navLinks.length - 1}
+              className={cn(
+                "flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300",
+                currentIndex === navLinks.length - 1 
+                  ? "opacity-50 cursor-not-allowed" 
+                  : "hover:bg-primary/10 hover:text-primary"
+              )}
+            >
+              <span>Next</span>
+              <ChevronRight className="w-5 h-5" />
+            </button>
           </div>
         </Card>
         
