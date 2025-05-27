@@ -57,7 +57,7 @@ const Layout = ({ children }: LayoutProps) => {
     <div className="min-h-screen transition-colors duration-300 bg-background text-foreground">
       <ParticleBackground />
       <div className="max-w-7xl mx-auto p-4 relative z-10">
-        {/* Top Navbar with all content */}
+        {/* Clean Top Navbar - just image, name, and social icons */}
         <Card className="bg-card mb-6 shadow-lg overflow-hidden">
           <div className="p-8 h-80 flex items-center justify-between">
             {/* Profile Image */}
@@ -71,90 +71,92 @@ const Layout = ({ children }: LayoutProps) => {
               </div>
             </div>
             
-            {/* Name and Navigation Links in Center */}
-            <div className="flex-1 flex flex-col items-center gap-6">
+            {/* Name in Center */}
+            <div className="flex-1 flex flex-col items-center gap-4">
               <div className="text-center">
                 <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-yellow-500 bg-clip-text text-transparent">
                   Samir Bajgain
                 </h1>
                 <p className="text-muted-foreground text-xl mt-2">Student</p>
               </div>
-              
-              {/* Navigation Links */}
-              <div className="flex justify-center gap-8">
-                {navLinks.map((link) => (
-                  <Link 
-                    key={link.name} 
-                    to={link.path}
-                    className={cn(
-                      "relative text-sm font-medium pb-1 transition-colors duration-200",
-                      path === link.path 
-                        ? "text-primary border-b-2 border-primary" 
-                        : "text-muted-foreground hover:text-primary"
-                    )}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
             </div>
             
-            {/* Social Icons and Theme Controls */}
-            <div className="flex flex-col items-center gap-4">
-              <div className="flex flex-col gap-3">
-                <Facebook className="w-6 h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
-                <Github className="w-6 h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
-                <Linkedin className="w-6 h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
-              </div>
-              
-              {/* Theme controls */}
-              <div className="flex flex-col gap-2">
-                <ColorSchemeSelector />
-                <ThemeToggle />
-              </div>
+            {/* Social Icons Only */}
+            <div className="flex flex-col items-center gap-3">
+              <Facebook className="w-6 h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
+              <Github className="w-6 h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
+              <Linkedin className="w-6 h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
             </div>
           </div>
         </Card>
         
-        {/* Main Content Area with centered navigation buttons */}
-        <Card className="bg-card border-border shadow-lg min-h-[600px] overflow-hidden relative">
-          <div className="p-6">
-            <div className="transition-all duration-300">
-              {children}
-            </div>
-          </div>
-          
-          {/* Vertically centered Previous/Next buttons */}
-          <div className="absolute top-1/2 left-4 transform -translate-y-1/2">
-            <button
-              onClick={goToPrevious}
-              disabled={currentIndex === 0}
-              className={cn(
-                "p-3 rounded-lg transition-all duration-300",
-                currentIndex === 0 
-                  ? "opacity-50 cursor-not-allowed" 
-                  : "hover:bg-primary/10 hover:text-primary"
-              )}
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-          </div>
+        {/* Main Content Area with navigation and theme controls at top */}
+        <div className="relative">
+          {/* Previous/Next buttons outside the card border */}
+          <button
+            onClick={goToPrevious}
+            disabled={currentIndex === 0}
+            className={cn(
+              "absolute left-[-60px] top-1/2 transform -translate-y-1/2 p-3 rounded-lg transition-all duration-300 z-10",
+              currentIndex === 0 
+                ? "opacity-50 cursor-not-allowed" 
+                : "hover:bg-primary/10 hover:text-primary"
+            )}
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
 
-          <div className="absolute top-1/2 right-4 transform -translate-y-1/2">
-            <button
-              onClick={goToNext}
-              disabled={currentIndex === navLinks.length - 1}
-              className={cn(
-                "p-3 rounded-lg transition-all duration-300",
-                currentIndex === navLinks.length - 1 
-                  ? "opacity-50 cursor-not-allowed" 
-                  : "hover:bg-primary/10 hover:text-primary"
-              )}
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-          </div>
-        </Card>
+          <button
+            onClick={goToNext}
+            disabled={currentIndex === navLinks.length - 1}
+            className={cn(
+              "absolute right-[-60px] top-1/2 transform -translate-y-1/2 p-3 rounded-lg transition-all duration-300 z-10",
+              currentIndex === navLinks.length - 1 
+                ? "opacity-50 cursor-not-allowed" 
+                : "hover:bg-primary/10 hover:text-primary"
+            )}
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+
+          <Card className="bg-card border-border shadow-lg min-h-[600px] overflow-hidden">
+            {/* Navigation and Theme Controls at top of content */}
+            <div className="p-6 border-b border-border">
+              <div className="flex justify-between items-center">
+                {/* Navigation Links */}
+                <div className="flex justify-center gap-8 flex-1">
+                  {navLinks.map((link) => (
+                    <Link 
+                      key={link.name} 
+                      to={link.path}
+                      className={cn(
+                        "relative text-sm font-medium pb-1 transition-colors duration-200",
+                        path === link.path 
+                          ? "text-primary border-b-2 border-primary" 
+                          : "text-muted-foreground hover:text-primary"
+                      )}
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+                
+                {/* Theme controls */}
+                <div className="flex gap-2">
+                  <ColorSchemeSelector />
+                  <ThemeToggle />
+                </div>
+              </div>
+            </div>
+            
+            {/* Main Content */}
+            <div className="p-6">
+              <div className="transition-all duration-300">
+                {children}
+              </div>
+            </div>
+          </Card>
+        </div>
         
         {/* Footer with contact details */}
         <Card className="bg-card border-border mt-6 shadow-lg overflow-hidden">
