@@ -1,13 +1,20 @@
 
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Calendar, Facebook, Github, Linkedin, ChevronLeft, ChevronRight } from "lucide-react";
+import { Mail, Phone, MapPin, Calendar, Facebook, Github, Linkedin, ChevronLeft, ChevronRight, Menu } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import ParticleBackground from "./ParticleBackground";
 import { cn } from "@/lib/utils";
 import { ColorSchemeSelector } from "./ColorSchemeSelector";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import TypewriterEffect from "./TypewriterEffect";
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarTrigger,
+} from "@/components/ui/menubar";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -17,6 +24,7 @@ const Layout = ({ children }: LayoutProps) => {
   const location = useLocation();
   const navigate = useNavigate();
   const path = location.pathname;
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
     { name: "About", path: "/" },
@@ -63,7 +71,7 @@ const Layout = ({ children }: LayoutProps) => {
         <Card className="bg-card mb-6 shadow-lg overflow-hidden">
           <div className="p-4 sm:p-6 lg:p-8">
             {/* Desktop Layout */}
-            <div className="hidden lg:flex items-center justify-between h-32 xl:h-40">
+            <div className="hidden lg:flex items-center justify-between h-32 xl:h-40 relative">
               {/* Profile Image - Left */}
               <div className="flex items-center">
                 <div className="w-24 h-24 xl:w-32 xl:h-32 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
@@ -75,9 +83,9 @@ const Layout = ({ children }: LayoutProps) => {
                 </div>
               </div>
               
-              {/* Name and Typewriter - Center */}
-              <div className="flex flex-col items-center justify-center flex-1 px-8">
-                <h1 className="text-2xl xl:text-4xl font-bold bg-gradient-to-r from-primary to-yellow-500 bg-clip-text text-transparent">
+              {/* Name and Typewriter - Absolute Center */}
+              <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center">
+                <h1 className="text-2xl xl:text-4xl font-bold bg-gradient-to-r from-primary to-yellow-500 bg-clip-text text-transparent whitespace-nowrap">
                   Samir Bajgain
                 </h1>
                 <div className="text-muted-foreground text-lg xl:text-xl mt-2 h-8 flex items-center justify-center">
@@ -217,8 +225,8 @@ const Layout = ({ children }: LayoutProps) => {
             {/* Navigation - Inside main card */}
             <div className="border-b border-border p-4">
               <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-                {/* Navigation Links */}
-                <div className="flex flex-wrap justify-center gap-2 sm:gap-6">
+                {/* Desktop/Tablet Navigation Links */}
+                <div className="hidden sm:flex flex-wrap justify-center gap-2 sm:gap-6">
                   {navLinks.map((link) => (
                     <Link 
                       key={link.name} 
@@ -234,9 +242,46 @@ const Layout = ({ children }: LayoutProps) => {
                     </Link>
                   ))}
                 </div>
+
+                {/* Mobile Dropdown Navigation */}
+                <div className="sm:hidden flex items-center justify-between w-full">
+                  <Menubar className="border-0 bg-transparent p-0">
+                    <MenubarMenu>
+                      <MenubarTrigger className="flex items-center gap-2 px-3 py-2 rounded-lg bg-primary/10 hover:bg-primary/20 transition-colors">
+                        <Menu className="w-4 h-4" />
+                        <span className="text-sm font-medium">
+                          {navLinks.find(link => link.path === path)?.name || "Menu"}
+                        </span>
+                      </MenubarTrigger>
+                      <MenubarContent className="w-48 bg-popover border border-border shadow-lg">
+                        {navLinks.map((link) => (
+                          <MenubarItem key={link.name} asChild>
+                            <Link 
+                              to={link.path}
+                              className={cn(
+                                "w-full px-3 py-2 text-sm cursor-pointer transition-colors rounded-sm",
+                                path === link.path 
+                                  ? "bg-primary/10 text-primary font-medium" 
+                                  : "hover:bg-primary/5 hover:text-primary"
+                              )}
+                            >
+                              {link.name}
+                            </Link>
+                          </MenubarItem>
+                        ))}
+                      </MenubarContent>
+                    </MenubarMenu>
+                  </Menubar>
+                  
+                  {/* Mobile Theme controls */}
+                  <div className="flex gap-2">
+                    <ColorSchemeSelector />
+                    <ThemeToggle />
+                  </div>
+                </div>
                 
-                {/* Theme controls */}
-                <div className="flex gap-2">
+                {/* Desktop Theme controls */}
+                <div className="hidden sm:flex gap-2">
                   <ColorSchemeSelector />
                   <ThemeToggle />
                 </div>
