@@ -7,6 +7,7 @@ import ParticleBackground from "./ParticleBackground";
 import { cn } from "@/lib/utils";
 import { ColorSchemeSelector } from "./ColorSchemeSelector";
 import { useEffect } from "react";
+import TypewriterEffect from "./TypewriterEffect";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -21,6 +22,7 @@ const Layout = ({ children }: LayoutProps) => {
     { name: "About", path: "/" },
     { name: "Resume", path: "/resume" },
     { name: "Portfolio", path: "/portfolio" },
+    { name: "Testimonials", path: "/testimonials" },
     { name: "Blog", path: "/blog" },
     { name: "Message", path: "/message" },
   ];
@@ -57,12 +59,12 @@ const Layout = ({ children }: LayoutProps) => {
     <div className="min-h-screen transition-colors duration-300 bg-background text-foreground">
       <ParticleBackground />
       <div className="max-w-7xl mx-auto p-4 relative z-10">
-        {/* Clean Top Navbar - just image, name, and social icons */}
+        {/* Top Navbar - image, name centered, and social icons */}
         <Card className="bg-card mb-6 shadow-lg overflow-hidden">
           <div className="p-8 h-80 flex items-center justify-between">
             {/* Profile Image */}
-            <div className="flex items-center">
-              <div className="w-48 h-48 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
+            <div className="flex items-center flex-1">
+              <div className="w-32 h-32 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
                 <img 
                   src="/lovable-uploads/c472a97e-1418-4f1c-93b0-f7714d7e53d7.png" 
                   alt="Samir Bajgain"
@@ -71,18 +73,20 @@ const Layout = ({ children }: LayoutProps) => {
               </div>
             </div>
             
-            {/* Name in Center */}
-            <div className="flex-1 flex flex-col items-center gap-4">
+            {/* Name in Exact Center */}
+            <div className="flex-1 flex flex-col items-center justify-center">
               <div className="text-center">
                 <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-yellow-500 bg-clip-text text-transparent">
                   Samir Bajgain
                 </h1>
-                <p className="text-muted-foreground text-xl mt-2">Student</p>
+                <div className="text-muted-foreground text-xl mt-2 h-8 flex items-center justify-center">
+                  <TypewriterEffect />
+                </div>
               </div>
             </div>
             
-            {/* Social Icons Only */}
-            <div className="flex flex-col items-center gap-3">
+            {/* Social Icons - Right Side */}
+            <div className="flex flex-col items-center gap-3 flex-1 justify-end">
               <Facebook className="w-6 h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
               <Github className="w-6 h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
               <Linkedin className="w-6 h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />

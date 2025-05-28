@@ -12,6 +12,7 @@ import Portfolio from "./pages/Portfolio";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Message from "./pages/Message";
+import Testimonials from "./pages/Testimonials";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/resume" element={<Resume />} />
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/message" element={<Message />} />
