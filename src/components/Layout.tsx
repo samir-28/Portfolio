@@ -59,14 +59,14 @@ const Layout = ({ children }: LayoutProps) => {
     <div className="min-h-screen transition-colors duration-300 bg-background text-foreground">
       <ParticleBackground />
       <div className="max-w-7xl mx-auto p-4 relative z-10">
-        {/* Top Navbar - Responsive */}
+        {/* Top Navbar - Responsive and Integrated */}
         <Card className="bg-card mb-6 shadow-lg overflow-hidden">
           <div className="p-4 sm:p-6 lg:p-8">
             {/* Desktop Layout */}
-            <div className="hidden md:flex items-center justify-between h-32 lg:h-40">
+            <div className="hidden lg:flex items-center justify-between h-32 xl:h-40">
               {/* Profile Image - Left */}
               <div className="flex items-center">
-                <div className="w-24 h-24 lg:w-32 lg:h-32 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
+                <div className="w-24 h-24 xl:w-32 xl:h-32 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
                   <img 
                     src="/lovable-uploads/c472a97e-1418-4f1c-93b0-f7714d7e53d7.png" 
                     alt="Samir Bajgain"
@@ -77,32 +77,41 @@ const Layout = ({ children }: LayoutProps) => {
               
               {/* Name and Typewriter - Center */}
               <div className="flex flex-col items-center justify-center flex-1 px-8">
-                <h1 className="text-2xl lg:text-4xl font-bold bg-gradient-to-r from-primary to-yellow-500 bg-clip-text text-transparent">
+                <h1 className="text-2xl xl:text-4xl font-bold bg-gradient-to-r from-primary to-yellow-500 bg-clip-text text-transparent">
                   Samir Bajgain
                 </h1>
-                <div className="text-muted-foreground text-lg lg:text-xl mt-2 h-8 flex items-center justify-center">
+                <div className="text-muted-foreground text-lg xl:text-xl mt-2 h-8 flex items-center justify-center">
                   <TypewriterEffect />
                 </div>
               </div>
               
               {/* Social Icons - Right */}
               <div className="flex flex-col items-center gap-3">
-                <Facebook className="w-5 h-5 lg:w-6 lg:h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
-                <Github className="w-5 h-5 lg:w-6 lg:h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
-                <Linkedin className="w-5 h-5 lg:w-6 lg:h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
+                <Facebook className="w-5 h-5 xl:w-6 xl:h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
+                <Github className="w-5 h-5 xl:w-6 xl:h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
+                <Linkedin className="w-5 h-5 xl:w-6 xl:h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
               </div>
             </div>
 
-            {/* Mobile Layout */}
-            <div className="md:hidden">
+            {/* Tablet Layout */}
+            <div className="hidden md:flex lg:hidden flex-col items-center gap-6">
               {/* Profile and Social Icons Row */}
-              <div className="flex items-center justify-between mb-4">
-                <div className="w-16 h-16 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
+              <div className="flex items-center justify-between w-full">
+                <div className="w-20 h-20 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
                   <img 
                     src="/lovable-uploads/c472a97e-1418-4f1c-93b0-f7714d7e53d7.png" 
                     alt="Samir Bajgain"
                     className="w-full h-full object-cover"
                   />
+                </div>
+                
+                <div className="flex flex-col items-center flex-1 px-6">
+                  <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-yellow-500 bg-clip-text text-transparent">
+                    Samir Bajgain
+                  </h1>
+                  <div className="text-muted-foreground text-lg mt-1 h-7 flex items-center justify-center">
+                    <TypewriterEffect />
+                  </div>
                 </div>
                 
                 <div className="flex gap-4">
@@ -111,9 +120,23 @@ const Layout = ({ children }: LayoutProps) => {
                   <Linkedin className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
                 </div>
               </div>
+            </div>
+
+            {/* Mobile Layout - Vertical */}
+            <div className="md:hidden">
+              {/* Profile Image - Centered */}
+              <div className="flex justify-center mb-4">
+                <div className="w-20 h-20 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
+                  <img 
+                    src="/lovable-uploads/c472a97e-1418-4f1c-93b0-f7714d7e53d7.png" 
+                    alt="Samir Bajgain"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
               
               {/* Name and Typewriter - Centered */}
-              <div className="text-center">
+              <div className="text-center mb-4">
                 <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-yellow-500 bg-clip-text text-transparent">
                   Samir Bajgain
                 </h1>
@@ -121,38 +144,45 @@ const Layout = ({ children }: LayoutProps) => {
                   <TypewriterEffect />
                 </div>
               </div>
+
+              {/* Social Icons - Centered */}
+              <div className="flex justify-center gap-6 mb-6">
+                <Facebook className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
+                <Github className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
+                <Linkedin className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
+              </div>
+            </div>
+
+            {/* Navigation Links - All Devices */}
+            <div className="border-t border-border pt-4 mt-4">
+              <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+                {/* Navigation Links */}
+                <div className="flex flex-wrap justify-center gap-2 sm:gap-6">
+                  {navLinks.map((link) => (
+                    <Link 
+                      key={link.name} 
+                      to={link.path}
+                      className={cn(
+                        "relative text-sm font-medium pb-1 px-2 py-1 rounded transition-colors duration-200",
+                        path === link.path 
+                          ? "text-primary bg-primary/10" 
+                          : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                      )}
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+                
+                {/* Theme controls */}
+                <div className="flex gap-2">
+                  <ColorSchemeSelector />
+                  <ThemeToggle />
+                </div>
+              </div>
             </div>
           </div>
         </Card>
-        
-        {/* Navigation and Theme Controls */}
-        <div className="mb-6">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 p-4 bg-card/50 rounded-lg">
-            {/* Navigation Links */}
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-6">
-              {navLinks.map((link) => (
-                <Link 
-                  key={link.name} 
-                  to={link.path}
-                  className={cn(
-                    "relative text-sm font-medium pb-1 px-2 py-1 rounded transition-colors duration-200",
-                    path === link.path 
-                      ? "text-primary bg-primary/10" 
-                      : "text-muted-foreground hover:text-primary hover:bg-primary/5"
-                  )}
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-            
-            {/* Theme controls */}
-            <div className="flex gap-2">
-              <ColorSchemeSelector />
-              <ThemeToggle />
-            </div>
-          </div>
-        </div>
         
         {/* Main Content Area with navigation buttons */}
         <div className="relative">
@@ -218,8 +248,8 @@ const Layout = ({ children }: LayoutProps) => {
               <div className="transition-all duration-300">
                 {children}
               </div>
-            </div>
-          </Card>
+            </Card>
+          </div>
         </div>
         
         {/* Footer with contact details and copyright */}
