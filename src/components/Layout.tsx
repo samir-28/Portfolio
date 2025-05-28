@@ -59,49 +59,109 @@ const Layout = ({ children }: LayoutProps) => {
     <div className="min-h-screen transition-colors duration-300 bg-background text-foreground">
       <ParticleBackground />
       <div className="max-w-7xl mx-auto p-4 relative z-10">
-        {/* Top Navbar - image, name centered, and social icons */}
+        {/* Top Navbar - Responsive */}
         <Card className="bg-card mb-6 shadow-lg overflow-hidden">
-          <div className="p-8 h-80 flex items-center justify-between">
-            {/* Profile Image */}
-            <div className="flex items-center flex-1">
-              <div className="w-32 h-32 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
-                <img 
-                  src="/lovable-uploads/c472a97e-1418-4f1c-93b0-f7714d7e53d7.png" 
-                  alt="Samir Bajgain"
-                  className="w-full h-full object-cover"
-                />
+          <div className="p-4 sm:p-6 lg:p-8">
+            {/* Desktop Layout */}
+            <div className="hidden md:flex items-center justify-between h-32 lg:h-40">
+              {/* Profile Image - Left */}
+              <div className="flex items-center">
+                <div className="w-24 h-24 lg:w-32 lg:h-32 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
+                  <img 
+                    src="/lovable-uploads/c472a97e-1418-4f1c-93b0-f7714d7e53d7.png" 
+                    alt="Samir Bajgain"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
-            </div>
-            
-            {/* Name in Exact Center */}
-            <div className="flex-1 flex flex-col items-center justify-center">
-              <div className="text-center">
-                <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-yellow-500 bg-clip-text text-transparent">
+              
+              {/* Name and Typewriter - Center */}
+              <div className="flex flex-col items-center justify-center flex-1 px-8">
+                <h1 className="text-2xl lg:text-4xl font-bold bg-gradient-to-r from-primary to-yellow-500 bg-clip-text text-transparent">
                   Samir Bajgain
                 </h1>
-                <div className="text-muted-foreground text-xl mt-2 h-8 flex items-center justify-center">
+                <div className="text-muted-foreground text-lg lg:text-xl mt-2 h-8 flex items-center justify-center">
+                  <TypewriterEffect />
+                </div>
+              </div>
+              
+              {/* Social Icons - Right */}
+              <div className="flex flex-col items-center gap-3">
+                <Facebook className="w-5 h-5 lg:w-6 lg:h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
+                <Github className="w-5 h-5 lg:w-6 lg:h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
+                <Linkedin className="w-5 h-5 lg:w-6 lg:h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
+              </div>
+            </div>
+
+            {/* Mobile Layout */}
+            <div className="md:hidden">
+              {/* Profile and Social Icons Row */}
+              <div className="flex items-center justify-between mb-4">
+                <div className="w-16 h-16 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
+                  <img 
+                    src="/lovable-uploads/c472a97e-1418-4f1c-93b0-f7714d7e53d7.png" 
+                    alt="Samir Bajgain"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                <div className="flex gap-4">
+                  <Facebook className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
+                  <Github className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
+                  <Linkedin className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
+                </div>
+              </div>
+              
+              {/* Name and Typewriter - Centered */}
+              <div className="text-center">
+                <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-yellow-500 bg-clip-text text-transparent">
+                  Samir Bajgain
+                </h1>
+                <div className="text-muted-foreground text-base mt-1 h-6 flex items-center justify-center">
                   <TypewriterEffect />
                 </div>
               </div>
             </div>
-            
-            {/* Social Icons - Right Side */}
-            <div className="flex flex-col items-center gap-3 flex-1 justify-end">
-              <Facebook className="w-6 h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
-              <Github className="w-6 h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
-              <Linkedin className="w-6 h-6 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
-            </div>
           </div>
         </Card>
         
-        {/* Main Content Area with navigation and theme controls at top */}
+        {/* Navigation and Theme Controls */}
+        <div className="mb-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 p-4 bg-card/50 rounded-lg">
+            {/* Navigation Links */}
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-6">
+              {navLinks.map((link) => (
+                <Link 
+                  key={link.name} 
+                  to={link.path}
+                  className={cn(
+                    "relative text-sm font-medium pb-1 px-2 py-1 rounded transition-colors duration-200",
+                    path === link.path 
+                      ? "text-primary bg-primary/10" 
+                      : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                  )}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+            
+            {/* Theme controls */}
+            <div className="flex gap-2">
+              <ColorSchemeSelector />
+              <ThemeToggle />
+            </div>
+          </div>
+        </div>
+        
+        {/* Main Content Area with navigation buttons */}
         <div className="relative">
-          {/* Previous/Next buttons outside the card border */}
+          {/* Previous/Next buttons outside the card border - Hidden on mobile */}
           <button
             onClick={goToPrevious}
             disabled={currentIndex === 0}
             className={cn(
-              "absolute left-[-60px] top-1/2 transform -translate-y-1/2 p-3 rounded-lg transition-all duration-300 z-10",
+              "hidden lg:block absolute left-[-60px] top-1/2 transform -translate-y-1/2 p-3 rounded-lg transition-all duration-300 z-10",
               currentIndex === 0 
                 ? "opacity-50 cursor-not-allowed" 
                 : "hover:bg-primary/10 hover:text-primary"
@@ -114,7 +174,7 @@ const Layout = ({ children }: LayoutProps) => {
             onClick={goToNext}
             disabled={currentIndex === navLinks.length - 1}
             className={cn(
-              "absolute right-[-60px] top-1/2 transform -translate-y-1/2 p-3 rounded-lg transition-all duration-300 z-10",
+              "hidden lg:block absolute right-[-60px] top-1/2 transform -translate-y-1/2 p-3 rounded-lg transition-all duration-300 z-10",
               currentIndex === navLinks.length - 1 
                 ? "opacity-50 cursor-not-allowed" 
                 : "hover:bg-primary/10 hover:text-primary"
@@ -123,38 +183,38 @@ const Layout = ({ children }: LayoutProps) => {
             <ChevronRight className="w-6 h-6" />
           </button>
 
-          <Card className="bg-card border-border shadow-lg min-h-[600px] overflow-hidden">
-            {/* Navigation and Theme Controls at top of content */}
-            <div className="p-6 border-b border-border">
-              <div className="flex justify-between items-center">
-                {/* Navigation Links */}
-                <div className="flex justify-center gap-8 flex-1">
-                  {navLinks.map((link) => (
-                    <Link 
-                      key={link.name} 
-                      to={link.path}
-                      className={cn(
-                        "relative text-sm font-medium pb-1 transition-colors duration-200",
-                        path === link.path 
-                          ? "text-primary border-b-2 border-primary" 
-                          : "text-muted-foreground hover:text-primary"
-                      )}
-                    >
-                      {link.name}
-                    </Link>
-                  ))}
-                </div>
-                
-                {/* Theme controls */}
-                <div className="flex gap-2">
-                  <ColorSchemeSelector />
-                  <ThemeToggle />
-                </div>
-              </div>
-            </div>
-            
+          {/* Mobile navigation buttons - Inside content area */}
+          <div className="lg:hidden flex justify-between mb-4">
+            <button
+              onClick={goToPrevious}
+              disabled={currentIndex === 0}
+              className={cn(
+                "p-2 rounded-lg transition-all duration-300",
+                currentIndex === 0 
+                  ? "opacity-50 cursor-not-allowed" 
+                  : "hover:bg-primary/10 hover:text-primary"
+              )}
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+
+            <button
+              onClick={goToNext}
+              disabled={currentIndex === navLinks.length - 1}
+              className={cn(
+                "p-2 rounded-lg transition-all duration-300",
+                currentIndex === navLinks.length - 1 
+                  ? "opacity-50 cursor-not-allowed" 
+                  : "hover:bg-primary/10 hover:text-primary"
+              )}
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+
+          <Card className="bg-card border-border shadow-lg min-h-[600px] overflow-hidden">            
             {/* Main Content */}
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               <div className="transition-all duration-300">
                 {children}
               </div>
@@ -162,25 +222,30 @@ const Layout = ({ children }: LayoutProps) => {
           </Card>
         </div>
         
-        {/* Footer with contact details */}
+        {/* Footer with contact details and copyright */}
         <Card className="bg-card border-border mt-6 shadow-lg overflow-hidden">
-          <div className="p-6 flex items-center justify-center">
-            <div className="flex flex-wrap gap-8 text-sm">
-              <div className="flex items-center gap-2 group hover:text-primary transition-colors duration-200">
-                <Mail className="w-4 h-4 text-primary" />
-                <span>samirbajgain9@gmail.com</span>
+          <div className="p-4 sm:p-6">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex flex-wrap gap-4 sm:gap-8 text-sm justify-center sm:justify-start">
+                <div className="flex items-center gap-2 group hover:text-primary transition-colors duration-200">
+                  <Mail className="w-4 h-4 text-primary" />
+                  <span className="text-xs sm:text-sm">samirbajgain9@gmail.com</span>
+                </div>
+                <div className="flex items-center gap-2 group hover:text-primary transition-colors duration-200">
+                  <Phone className="w-4 h-4 text-primary" />
+                  <span className="text-xs sm:text-sm">+977 9818160291</span>
+                </div>
+                <div className="flex items-center gap-2 group hover:text-primary transition-colors duration-200">
+                  <MapPin className="w-4 h-4 text-primary" />
+                  <span className="text-xs sm:text-sm">Kathmandu, Nepal</span>
+                </div>
+                <div className="flex items-center gap-2 group hover:text-primary transition-colors duration-200">
+                  <Calendar className="w-4 h-4 text-primary" />
+                  <span className="text-xs sm:text-sm">2003</span>
+                </div>
               </div>
-              <div className="flex items-center gap-2 group hover:text-primary transition-colors duration-200">
-                <Phone className="w-4 h-4 text-primary" />
-                <span>+977 9818160291</span>
-              </div>
-              <div className="flex items-center gap-2 group hover:text-primary transition-colors duration-200">
-                <MapPin className="w-4 h-4 text-primary" />
-                <span>Kathmandu, Nepal</span>
-              </div>
-              <div className="flex items-center gap-2 group hover:text-primary transition-colors duration-200">
-                <Calendar className="w-4 h-4 text-primary" />
-                <span>2003</span>
+              <div className="text-xs sm:text-sm text-muted-foreground">
+                © 2024 Samir Bajgain. All rights reserved.
               </div>
             </div>
           </div>
