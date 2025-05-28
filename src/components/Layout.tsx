@@ -59,7 +59,7 @@ const Layout = ({ children }: LayoutProps) => {
     <div className="min-h-screen transition-colors duration-300 bg-background text-foreground">
       <ParticleBackground />
       <div className="max-w-7xl mx-auto p-4 relative z-10">
-        {/* Top Navbar - Responsive and Integrated */}
+        {/* Top Profile Card */}
         <Card className="bg-card mb-6 shadow-lg overflow-hidden">
           <div className="p-4 sm:p-6 lg:p-8">
             {/* Desktop Layout */}
@@ -146,39 +146,10 @@ const Layout = ({ children }: LayoutProps) => {
               </div>
 
               {/* Social Icons - Centered */}
-              <div className="flex justify-center gap-6 mb-6">
+              <div className="flex justify-center gap-6">
                 <Facebook className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
                 <Github className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
                 <Linkedin className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors duration-300" />
-              </div>
-            </div>
-
-            {/* Navigation Links - All Devices */}
-            <div className="border-t border-border pt-4 mt-4">
-              <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-                {/* Navigation Links */}
-                <div className="flex flex-wrap justify-center gap-2 sm:gap-6">
-                  {navLinks.map((link) => (
-                    <Link 
-                      key={link.name} 
-                      to={link.path}
-                      className={cn(
-                        "relative text-sm font-medium pb-1 px-2 py-1 rounded transition-colors duration-200",
-                        path === link.path 
-                          ? "text-primary bg-primary/10" 
-                          : "text-muted-foreground hover:text-primary hover:bg-primary/5"
-                      )}
-                    >
-                      {link.name}
-                    </Link>
-                  ))}
-                </div>
-                
-                {/* Theme controls */}
-                <div className="flex gap-2">
-                  <ColorSchemeSelector />
-                  <ThemeToggle />
-                </div>
               </div>
             </div>
           </div>
@@ -242,7 +213,36 @@ const Layout = ({ children }: LayoutProps) => {
             </button>
           </div>
 
-          <Card className="bg-card border-border shadow-lg min-h-[600px] overflow-hidden">            
+          <Card className="bg-card border-border shadow-lg min-h-[600px] overflow-hidden">
+            {/* Navigation - Inside main card */}
+            <div className="border-b border-border p-4">
+              <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+                {/* Navigation Links */}
+                <div className="flex flex-wrap justify-center gap-2 sm:gap-6">
+                  {navLinks.map((link) => (
+                    <Link 
+                      key={link.name} 
+                      to={link.path}
+                      className={cn(
+                        "relative text-sm font-medium pb-1 px-2 py-1 rounded transition-colors duration-200",
+                        path === link.path 
+                          ? "text-primary bg-primary/10" 
+                          : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                      )}
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+                
+                {/* Theme controls */}
+                <div className="flex gap-2">
+                  <ColorSchemeSelector />
+                  <ThemeToggle />
+                </div>
+              </div>
+            </div>
+            
             {/* Main Content */}
             <div className="p-4 sm:p-6">
               <div className="transition-all duration-300">
