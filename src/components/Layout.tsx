@@ -248,8 +248,8 @@ const Layout = ({ children }: LayoutProps) => {
               <div className="transition-all duration-300">
                 {children}
               </div>
-            </Card>
-          </div>
+            </div>
+          </Card>
         </div>
         
         {/* Footer with contact details and copyright */}
