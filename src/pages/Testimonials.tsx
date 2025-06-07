@@ -83,16 +83,18 @@ const Testimonials = () => {
   }, [api]);
 
   const scrollPrev = () => {
+    console.log("Previous button clicked");
     api?.scrollPrev();
   };
 
   const scrollNext = () => {
+    console.log("Next button clicked");
     api?.scrollNext();
   };
 
   return (
     <Layout>
-      <div className="mb-12">
+      <div className="mb-12 animate-fade-in">
         <h2 className="text-3xl font-bold mb-4">What People Say</h2>
         <div className="w-12 h-1 bg-primary mb-6"></div>
         
@@ -110,21 +112,23 @@ const Testimonials = () => {
             setApi={setApi}
           >
             <CarouselContent className="-ml-2 md:-ml-4">
-              {testimonials.map((testimonial) => (
+              {testimonials.map((testimonial, index) => (
                 <CarouselItem key={testimonial.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/2">
-                  <Card className="bg-card/80 border-border p-6 hover:bg-card/70 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 h-full">
+                  <Card className="bg-card/80 backdrop-blur border-border p-6 hover:bg-card/90 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 hover:scale-105 h-full animate-scale-in" 
+                        style={{animationDelay: `${index * 0.1}s`}}>
                     <div className="flex items-start gap-4 h-full">
-                      <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 hover-scale">
                         <span className="text-primary font-semibold text-sm">{testimonial.avatar}</span>
                       </div>
                       <div className="flex-1 flex flex-col h-full">
-                        <Quote className="w-6 h-6 text-primary/50 mb-3" />
+                        <Quote className="w-6 h-6 text-primary/50 mb-3 animate-pulse" />
                         <p className="text-muted-foreground mb-4 italic flex-1">"{testimonial.content}"</p>
                         
                         <div className="mt-auto">
                           <div className="flex items-center gap-2 mb-2">
                             {[...Array(testimonial.rating)].map((_, i) => (
-                              <Star key={i} className="w-4 h-4 fill-yellow-500 text-yellow-500" />
+                              <Star key={i} className="w-4 h-4 fill-yellow-500 text-yellow-500 animate-scale-in" 
+                                    style={{animationDelay: `${i * 0.1}s`}} />
                             ))}
                           </div>
                           
@@ -140,30 +144,50 @@ const Testimonials = () => {
               ))}
             </CarouselContent>
             
-            {/* Desktop Navigation Buttons */}
-            <CarouselPrevious className="hidden md:flex -left-12" />
-            <CarouselNext className="hidden md:flex -right-12" />
+            {/* Enhanced Desktop Navigation Buttons */}
+            <Button
+              variant="outline"
+              size="icon"
+              className="absolute -left-12 top-1/2 -translate-y-1/2 hidden md:flex h-10 w-10 rounded-full bg-background/80 backdrop-blur border-2 hover:bg-primary hover:text-primary-foreground hover:scale-110 transition-all duration-300 shadow-lg"
+              onClick={scrollPrev}
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </Button>
+            
+            <Button
+              variant="outline"
+              size="icon"
+              className="absolute -right-12 top-1/2 -translate-y-1/2 hidden md:flex h-10 w-10 rounded-full bg-background/80 backdrop-blur border-2 hover:bg-primary hover:text-primary-foreground hover:scale-110 transition-all duration-300 shadow-lg"
+              onClick={scrollNext}
+            >
+              <ChevronRight className="h-4 w-4" />
+            </Button>
           </Carousel>
           
-          {/* Custom Navigation Buttons for Mobile */}
+          {/* Enhanced Mobile Navigation */}
           <div className="md:hidden flex justify-between items-center mt-6">
             <Button 
               variant="outline" 
               size="icon"
               onClick={scrollPrev}
-              className="h-10 w-10"
+              className="h-12 w-12 rounded-full bg-background/80 backdrop-blur border-2 hover:bg-primary hover:text-primary-foreground hover:scale-110 transition-all duration-300 shadow-lg"
             >
-              <ChevronLeft className="h-4 w-4" />
+              <ChevronLeft className="h-5 w-5" />
             </Button>
             
-            <div className="flex gap-2">
+            <div className="flex gap-3">
               {Array.from({ length: count }, (_, index) => (
                 <button
                   key={index}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    index + 1 === current ? "bg-primary" : "bg-muted"
+                  className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-125 ${
+                    index + 1 === current 
+                      ? "bg-primary shadow-lg shadow-primary/50" 
+                      : "bg-muted hover:bg-muted-foreground/50"
                   }`}
-                  onClick={() => api?.scrollTo(index)}
+                  onClick={() => {
+                    console.log(`Dot ${index} clicked`);
+                    api?.scrollTo(index);
+                  }}
                 />
               ))}
             </div>
@@ -172,23 +196,23 @@ const Testimonials = () => {
               variant="outline" 
               size="icon"
               onClick={scrollNext}
-              className="h-10 w-10"
+              className="h-12 w-12 rounded-full bg-background/80 backdrop-blur border-2 hover:bg-primary hover:text-primary-foreground hover:scale-110 transition-all duration-300 shadow-lg"
             >
-              <ChevronRight className="h-4 w-4" />
+              <ChevronRight className="h-5 w-5" />
             </Button>
           </div>
           
-          {/* Current slide indicator */}
-          <div className="text-center mt-4">
-            <p className="text-sm text-muted-foreground">
-              {current} of {count}
+          {/* Enhanced slide indicator */}
+          <div className="text-center mt-6">
+            <p className="text-sm text-muted-foreground animate-fade-in">
+              <span className="text-primary font-semibold">{current}</span> of <span className="text-primary font-semibold">{count}</span>
             </p>
           </div>
         </div>
         
-        {/* Mobile swipe indicator */}
+        {/* Mobile swipe indicator with animation */}
         <div className="md:hidden text-center mt-4">
-          <p className="text-xs text-muted-foreground opacity-75">
+          <p className="text-xs text-muted-foreground opacity-75 animate-pulse">
             ← Swipe or use buttons to navigate →
           </p>
         </div>
