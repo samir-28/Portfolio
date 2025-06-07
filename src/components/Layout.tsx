@@ -1,9 +1,8 @@
-
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Calendar, Facebook, Github, Linkedin, ChevronLeft, ChevronRight, Menu } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
-import ParticleBackground from "./ParticleBackground";
+import SpaceBackground from "./SpaceBackground";
 import { cn } from "@/lib/utils";
 import { ColorSchemeSelector } from "./ColorSchemeSelector";
 import { useEffect, useState } from "react";
@@ -65,7 +64,7 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div className="min-h-screen transition-colors duration-300 bg-background text-foreground">
-      <ParticleBackground />
+      <SpaceBackground />
       <div className="max-w-7xl mx-auto p-4 relative z-10">
         {/* Top Profile Card */}
         <Card className="bg-card mb-6 shadow-lg overflow-hidden">
