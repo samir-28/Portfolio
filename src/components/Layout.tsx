@@ -1,3 +1,4 @@
+
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Calendar, Facebook, Github, Linkedin, ChevronLeft, ChevronRight, Menu } from "lucide-react";
@@ -73,12 +74,14 @@ const Layout = ({ children }: LayoutProps) => {
             <div className="hidden lg:flex items-center justify-between h-32 xl:h-40 relative">
               {/* Profile Image - Left */}
               <div className="flex items-center">
-                <div className="w-24 h-24 xl:w-32 xl:h-32 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
+                <div className="w-24 h-24 xl:w-32 xl:h-32 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70 transform transition-all duration-500 hover:scale-110 hover:rotate-3 hover:shadow-2xl group cursor-pointer relative">
                   <img 
                     src="/lovable-uploads/c472a97e-1418-4f1c-93b0-f7714d7e53d7.png" 
                     alt="Samir Bajgain"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 ring-0 group-hover:ring-4 ring-primary/30 rounded-xl transition-all duration-500"></div>
                 </div>
               </div>
               
@@ -104,12 +107,14 @@ const Layout = ({ children }: LayoutProps) => {
             <div className="hidden md:flex lg:hidden flex-col items-center gap-6">
               {/* Profile and Social Icons Row */}
               <div className="flex items-center justify-between w-full">
-                <div className="w-20 h-20 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
+                <div className="w-20 h-20 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70 transform transition-all duration-500 hover:scale-110 hover:rotate-3 hover:shadow-2xl group cursor-pointer relative">
                   <img 
                     src="/lovable-uploads/c472a97e-1418-4f1c-93b0-f7714d7e53d7.png" 
                     alt="Samir Bajgain"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 ring-0 group-hover:ring-4 ring-primary/30 rounded-xl transition-all duration-500"></div>
                 </div>
                 
                 <div className="flex flex-col items-center flex-1 px-6">
@@ -133,12 +138,14 @@ const Layout = ({ children }: LayoutProps) => {
             <div className="md:hidden">
               {/* Profile Image - Centered */}
               <div className="flex justify-center mb-4">
-                <div className="w-20 h-20 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70">
+                <div className="w-20 h-20 rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70 transform transition-all duration-500 hover:scale-110 hover:rotate-3 hover:shadow-2xl group cursor-pointer relative">
                   <img 
                     src="/lovable-uploads/c472a97e-1418-4f1c-93b0-f7714d7e53d7.png" 
                     alt="Samir Bajgain"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 ring-0 group-hover:ring-4 ring-primary/30 rounded-xl transition-all duration-500"></div>
                 </div>
               </div>
               
