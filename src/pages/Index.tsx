@@ -1,4 +1,3 @@
-
 import Layout from "@/components/Layout";
 import { Card } from "@/components/ui/card";
 
@@ -11,30 +10,24 @@ const Index = () => {
         <div className="w-12 h-1 bg-primary mb-6"></div>
         
         <div className="space-y-4 text-muted-foreground leading-relaxed">
-          <Card className="p-6 bg-card/80 border-border transform transition-all duration-500 hover:scale-105 hover:shadow-xl hover:-translate-y-2 hover:bg-card/90 hover:border-primary/30 group cursor-pointer">
-            <p className="group-hover:text-foreground transition-colors duration-300">
-              Hi! I'm Samir Bajgain & I am currently an undergraduate student in Computer Science and Information Technology 
-              (CSIT) from Tribhuvan University. I have a keen interest in graphic design and web development, with a particular 
-              focus on using Wordpress, HTML, CSS, JavaScript, and PHP.
-            </p>
-          </Card>
+          <p className="transform transition-all duration-500 hover:scale-105 hover:text-foreground cursor-pointer">
+            Hi! I'm Samir Bajgain & I am currently an undergraduate student in Computer Science and Information Technology 
+            (CSIT) from Tribhuvan University. I have a keen interest in graphic design and web development, with a particular 
+            focus on using Wordpress, HTML, CSS, JavaScript, and PHP.
+          </p>
           
-          <Card className="p-6 bg-card/80 border-border transform transition-all duration-500 hover:scale-105 hover:shadow-xl hover:-translate-y-2 hover:bg-card/90 hover:border-primary/30 group cursor-pointer">
-            <p className="group-hover:text-foreground transition-colors duration-300">
-              I have experience in using various design software and tools to create logos, websites, and other visual graphics. 
-              In addition to design, I also have a good understanding of web development and have experience in using 
-              Wordpress, HTML, CSS, JavaScript, and PHP to develop websites and applications.
-            </p>
-          </Card>
+          <p className="transform transition-all duration-500 hover:scale-105 hover:text-foreground cursor-pointer">
+            I have experience in using various design software and tools to create logos, websites, and other visual graphics. 
+            In addition to design, I also have a good understanding of web development and have experience in using 
+            Wordpress, HTML, CSS, JavaScript, and PHP to develop websites and applications.
+          </p>
           
-          <Card className="p-6 bg-card/80 border-border transform transition-all duration-500 hover:scale-105 hover:shadow-xl hover:-translate-y-2 hover:bg-card/90 hover:border-primary/30 group cursor-pointer">
-            <p className="group-hover:text-foreground transition-colors duration-300">
-              I am always looking for opportunities to improve my skills and stay up-to-date with the latest trends and 
-              technologies in web development. I am a hardworking and motivated individual who is committed to delivering 
-              high-quality work to my clients. Overall, I am excited about pursuing a career in the design and development 
-              field, where I can use my skills to create meaningful and impactful designs and applications.
-            </p>
-          </Card>
+          <p className="transform transition-all duration-500 hover:scale-105 hover:text-foreground cursor-pointer">
+            I am always looking for opportunities to improve my skills and stay up-to-date with the latest trends and 
+            technologies in web development. I am a hardworking and motivated individual who is committed to delivering 
+            high-quality work to my clients. Overall, I am excited about pursuing a career in the design and development 
+            field, where I can use my skills to create meaningful and impactful designs and applications.
+          </p>
         </div>
       </div>
       
