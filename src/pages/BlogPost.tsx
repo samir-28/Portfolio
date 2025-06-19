@@ -1,4 +1,3 @@
-
 import { useParams, Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
@@ -17,134 +16,131 @@ interface BlogPost {
 
 const BlogPost = () => {
   const { id } = useParams();
-  
+
   const blogPosts: BlogPost[] = [
     {
       id: 1,
-      title: "The Future of Web Development in 2023",
+      title: "Streamlit: The Future of Python Web Apps in 2025",
       content: `
-        <p>The web development landscape is constantly evolving, and 2023 has brought us some exciting new trends and technologies that are reshaping how we build applications.</p>
-        
-        <h3>React Server Components</h3>
-        <p>One of the most significant developments is the introduction of React Server Components, which allow developers to build components that render on the server, reducing bundle sizes and improving performance.</p>
-        
-        <h3>Edge Computing</h3>
-        <p>Edge computing is becoming more mainstream, allowing applications to run closer to users for better performance and reduced latency. This is particularly important for global applications.</p>
-        
-        <h3>TypeScript Adoption</h3>
-        <p>TypeScript continues to gain popularity, with more developers adopting it for better code quality and developer experience. The latest versions bring even more powerful type inference capabilities.</p>
-        
-        <h3>Web3 Integration</h3>
-        <p>While still emerging, Web3 technologies are beginning to integrate with traditional web development, opening up new possibilities for decentralized applications.</p>
-        
-        <p>As we move forward, these technologies will continue to shape the future of web development, making applications faster, more reliable, and more user-friendly.</p>
-      `,
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80",
+    <p>
+      Python developers have long dreamed of creating beautiful, interactive web applications without having to learn complex front-end frameworks.
+      Enter <strong>Streamlit</strong>, a game-changing open-source library that lets you build data apps and dashboards quickly — using pure Python.
+    </p>
+    
+    <h3>What is Streamlit?</h3>
+    <p>
+      Streamlit allows you to turn Python scripts into shareable web apps in minutes. Its simple API handles UI components like sliders, buttons, and charts,
+      automatically updating the app as users interact.
+    </p>
+    
+    <h3>Why Streamlit is Gaining Momentum</h3>
+    <p>
+      With its easy-to-learn syntax and seamless integration with popular data science libraries like <code>pandas</code>, <code>matplotlib</code>, and
+      <code>plotly</code>, Streamlit empowers analysts, researchers, and developers to quickly prototype and deploy applications.
+    </p>
+    
+    <h3>Latest Features in Streamlit 1.35+</h3>
+    <p>
+      The latest versions of Streamlit bring enhanced performance, new components like the <code>st.chat_input</code> widget for building chatbots, better
+      theming options, and improved support for asynchronous operations.
+    </p>
+    
+    <h3>Use Case: Building a ChatGPT-Powered Assistant</h3>
+    <p>
+      One exciting use of Streamlit is integrating AI models such as OpenAI's GPT. By combining Streamlit's UI components with GPT APIs, you can create interactive
+      assistants, automated report generators, or intelligent data explorers with just a few lines of code.
+    </p>
+    
+    <h3>Deploying Your Streamlit App</h3>
+    <p>
+      Once your app is ready, you can deploy it on platforms like <strong>Streamlit Community Cloud</strong>, <strong>Render</strong>, or <strong>Hugging Face Spaces</strong>
+      with minimal configuration — making it accessible to anyone via a web link.
+    </p>
+    
+    <p>
+      Streamlit is truly democratizing web app development for Python users, bridging the gap between data science and software engineering. Whether you're a beginner
+      or a pro, Streamlit offers an incredible platform to bring your ideas to life.
+    </p>
+  `,
+      image:
+        "https://miro.medium.com/v2/resize:fit:1400/1*2VW6RW4f28PZj4hSsEmM2Q.png",
       author: "Samir Bajgain",
-      date: "May 15, 2023",
-      category: "Web Development",
-      readTime: "5 min read",
+      date: "April 24, 2025",
+      category: "Python, Web Development",
+      readTime: "6 min read",
     },
+
     {
       id: 2,
-      title: "Design Principles Every Developer Should Know",
+      title: "Django REST Framework: Building Robust APIs in 2025",
       content: `
-        <p>Good design is not just about making things look pretty – it's about creating interfaces that are intuitive, accessible, and effective. Here are some fundamental design principles every developer should understand.</p>
-        
-        <h3>Visual Hierarchy</h3>
-        <p>Visual hierarchy guides users through your content in order of importance. Use size, color, contrast, and spacing to create a clear information hierarchy that helps users understand what to focus on first.</p>
-        
-        <h3>Consistency</h3>
-        <p>Consistent design patterns help users learn your interface quickly. Use consistent colors, typography, spacing, and interaction patterns throughout your application.</p>
-        
-        <h3>Accessibility</h3>
-        <p>Design with accessibility in mind from the start. This includes proper color contrast, keyboard navigation, screen reader support, and clear focus indicators.</p>
-        
-        <h3>White Space</h3>
-        <p>Don't be afraid of white space. It helps reduce cognitive load and makes your content more digestible. White space is not wasted space – it's a powerful design tool.</p>
-        
-        <h3>User Feedback</h3>
-        <p>Always provide clear feedback for user actions. Whether it's a button press, form submission, or loading state, users should always know what's happening.</p>
-        
-        <p>By following these principles, you'll create interfaces that not only look good but also provide excellent user experiences.</p>
-      `,
-      image: "https://images.unsplash.com/photo-1509343256512-d77a5cb3791b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    <p>
+      APIs are the backbone of modern web and mobile applications, and <strong>Django REST Framework (DRF)</strong> remains one of the most popular tools
+      for building powerful, flexible RESTful APIs in Python.
+    </p>
+
+    <h3>What is Django REST Framework?</h3>
+    <p>
+      DRF is a powerful and flexible toolkit for building Web APIs on top of Django. It simplifies common tasks like serialization, authentication,
+      and viewsets, allowing developers to focus on writing clean, maintainable API code.
+    </p>
+
+    <h3>Why DRF Continues to Lead</h3>
+    <p>
+      Its comprehensive feature set, extensive documentation, and a thriving community make DRF the go-to choice for Python developers. It integrates
+      seamlessly with Django’s ORM, making complex queries and nested relationships easy to handle.
+    </p>
+
+    <h3>Latest Features in DRF 3.16+</h3>
+    <p>
+      The latest DRF release introduces improved support for Django 5.2 and Python 3.14, enhanced validation with nullable unique constraints,
+      and better async views support to help you build more responsive APIs.
+    </p>
+
+    <h3>Use Case: Secure, Scalable API for Modern Apps</h3>
+    <p>
+      DRF empowers you to build secure and scalable APIs for web and mobile apps with features like token and session authentication,
+      throttling, permissions, and pagination out of the box. You can rapidly build everything from simple CRUD APIs to complex multi-tenant systems.
+    </p>
+
+    <h3>Deploying Your DRF API</h3>
+    <p>
+      Deploy your API easily on platforms like <strong>Heroku</strong>, <strong>Render</strong>, or cloud providers such as <strong>AWS</strong> and
+      <strong>Google Cloud Platform</strong>. Combine with containerization (Docker) and CI/CD pipelines for streamlined delivery.
+    </p>
+
+    <p>
+      Django REST Framework remains a cornerstone in the Python ecosystem, giving developers the tools to build reliable APIs quickly,
+      whether you're building internal tools or public-facing services.
+    </p>
+  `,
+      image:
+        "https://learnbatta.com/assets/images/django/getting-started-with-django-rest-framework.png",
       author: "Samir Bajgain",
-      date: "April 22, 2023",
-      category: "Design",
+      date: "June 19, 2025",
+      category: "Python, API Development",
       readTime: "7 min read",
-    },
-    {
-      id: 3,
-      title: "Getting Started with Three.js for Web Animations",
-      content: `
-        <p>Three.js is a powerful JavaScript library that makes it easy to create and display 3D graphics in web browsers. Whether you want to create interactive visualizations, games, or stunning visual effects, Three.js provides the tools you need.</p>
-        
-        <h3>Setting Up Three.js</h3>
-        <p>Getting started with Three.js is straightforward. You can install it via npm or include it directly in your HTML. The library provides a comprehensive set of tools for 3D rendering.</p>
-        
-        <h3>Basic Concepts</h3>
-        <p>Three.js is built around three main concepts: Scene (what you want to draw), Camera (where you're looking from), and Renderer (how to draw). Understanding these fundamentals is key to working with Three.js effectively.</p>
-        
-        <h3>Creating Your First Scene</h3>
-        <p>Start simple with basic geometric shapes like cubes, spheres, and planes. Learn how to apply materials, textures, and lighting to bring your scenes to life.</p>
-        
-        <h3>Animation and Interactivity</h3>
-        <p>Three.js makes it easy to animate objects and respond to user interactions. You can create smooth animations using the built-in animation loop and respond to mouse and keyboard events.</p>
-        
-        <h3>Performance Optimization</h3>
-        <p>As your scenes become more complex, performance becomes important. Learn about techniques like frustum culling, level of detail, and efficient geometry management.</p>
-        
-        <p>Three.js opens up a world of creative possibilities for web developers. Start experimenting and see what amazing 3D experiences you can create!</p>
-      `,
-      image: "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80",
-      author: "Samir Bajgain",
-      date: "March 10, 2023",
-      category: "Animation",
-      readTime: "10 min read",
-    },
-    {
-      id: 4,
-      title: "Optimizing Website Performance for Better User Experience",
-      content: `
-        <p>Website performance directly impacts user experience, SEO rankings, and conversion rates. Here are proven strategies to optimize your website's performance and keep users engaged.</p>
-        
-        <h3>Image Optimization</h3>
-        <p>Images often account for the majority of a webpage's size. Use modern formats like WebP, implement lazy loading, and serve appropriately sized images for different screen sizes.</p>
-        
-        <h3>Code Splitting</h3>
-        <p>Break your JavaScript bundles into smaller chunks that load only when needed. This reduces initial load times and improves perceived performance.</p>
-        
-        <h3>Caching Strategies</h3>
-        <p>Implement effective caching at multiple levels: browser cache, CDN cache, and server-side cache. This reduces server load and improves response times for returning users.</p>
-        
-        <h3>Critical CSS</h3>
-        <p>Inline critical CSS to eliminate render-blocking resources and improve first contentful paint. Load non-critical CSS asynchronously to avoid blocking page rendering.</p>
-        
-        <h3>Database Optimization</h3>
-        <p>Optimize database queries, use proper indexing, and consider implementing read replicas for high-traffic applications. Slow database queries can significantly impact performance.</p>
-        
-        <h3>Monitoring and Measurement</h3>
-        <p>Use tools like Lighthouse, WebPageTest, and Core Web Vitals to measure performance and identify optimization opportunities. Regular monitoring helps maintain good performance over time.</p>
-        
-        <p>Performance optimization is an ongoing process. Start with the biggest impact changes and continuously monitor and improve your website's performance.</p>
-      `,
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80",
-      author: "Samir Bajgain",
-      date: "February 18, 2023",
-      category: "Performance",
-      readTime: "8 min read",
     },
   ];
 
-  const post = blogPosts.find(p => p.id === parseInt(id || '0'));
+  const post = blogPosts.find((p) => p.id === parseInt(id || "0"));
 
   if (!post) {
     return (
       <Layout>
-        <div className="text-center py-20">
-          <h2 className="text-2xl font-bold mb-4">Blog Post Not Found</h2>
-          <Link to="/blog" className="text-primary hover:underline">
+        <div className="flex flex-col items-center justify-center py-20 text-center px-4">
+          <h2 className="text-2xl font-bold mb-6">Blog Post Not Found</h2>
+          <iframe
+            src="https://lottie.host/embed/3213e956-a191-478c-85a9-bc2dd8adab50/Hat8kmYUoP.lottie"
+            title="Not Found Animation"
+            className="w-64 h-64 mb-8"
+            style={{ border: "none" }}
+            allowFullScreen
+          />
+          <Link
+            to="/blog"
+            className="text-primary hover:underline text-lg font-medium"
+          >
             ← Back to Blog
           </Link>
         </div>
@@ -155,8 +151,8 @@ const BlogPost = () => {
   return (
     <Layout>
       <div className="max-w-4xl mx-auto">
-        <Link 
-          to="/blog" 
+        <Link
+          to="/blog"
           className="inline-flex items-center text-primary hover:underline mb-6"
         >
           <ArrowLeft size={16} className="mr-2" />
@@ -165,19 +161,21 @@ const BlogPost = () => {
 
         <Card className="overflow-hidden border-border bg-card/80">
           <div className="relative h-64 md:h-80 overflow-hidden">
-            <img 
-              src={post.image} 
-              alt={post.title} 
+            <img
+              src={post.image}
+              alt={post.title}
               className="w-full h-full object-cover"
             />
             <div className="absolute top-4 right-4 bg-primary text-primary-foreground text-sm font-medium py-2 px-4 rounded-full">
               {post.category}
             </div>
           </div>
-          
+
           <CardContent className="p-8">
-            <h1 className="text-3xl md:text-4xl font-bold mb-6">{post.title}</h1>
-            
+            <h1 className="text-3xl md:text-4xl font-bold mb-6">
+              {post.title}
+            </h1>
+
             <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground mb-8 pb-6 border-b border-border">
               <div className="flex items-center gap-2">
                 <User size={16} />
@@ -192,8 +190,8 @@ const BlogPost = () => {
                 <span>{post.readTime}</span>
               </div>
             </div>
-            
-            <div 
+
+            <div
               className="prose prose-lg max-w-none text-foreground"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />

@@ -1,7 +1,10 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { Palette } from "lucide-react";
 
 interface ColorScheme {
@@ -11,13 +14,13 @@ interface ColorScheme {
 
 const colorSchemes: ColorScheme[] = [
   { name: "Default", primary: "#278783" },
-  { name: "Cream", primary: "#1D503A" },
-  { name: "Mint", primary: "#D1E0D7" },
-  { name: "Blue", primary: "#607EBC" },
-  { name: "Light", primary: "#30382F" },
-  { name: "Cyan", primary: "#6EC6CB" },
-  { name: "Orange", primary: "#E87A64" },
-  { name: "Custom", primary: "#1325541" },
+  { name: "Crimson", primary: "#DC143C" },
+  { name: "Royal Blue", primary: "#4169E1" },
+  { name: "Amber", primary: "#FFB300" },
+  { name: "Indigo", primary: "#4B0082" },
+  { name: "Forest", primary: "#228B22" },
+  { name: "Rose", primary: "#C94C7C" },
+  { name: "Slate", primary: "#708090" },
 ];
 
 export function ColorSchemeSelector() {
@@ -25,44 +28,55 @@ export function ColorSchemeSelector() {
 
   const applyColorScheme = (scheme: ColorScheme) => {
     const root = document.documentElement;
-    
+
     // Convert hex to HSL for CSS variables
     const hexToHsl = (hex: string) => {
       const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
       if (!result) return "0 0% 50%";
-      
+
       const r = parseInt(result[1], 16) / 255;
       const g = parseInt(result[2], 16) / 255;
       const b = parseInt(result[3], 16) / 255;
-      
+
       const max = Math.max(r, g, b);
       const min = Math.min(r, g, b);
-      let h, s, l = (max + min) / 2;
-      
+      let h,
+        s,
+        l = (max + min) / 2;
+
       if (max === min) {
         h = s = 0;
       } else {
         const d = max - min;
         s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
         switch (max) {
-          case r: h = (g - b) / d + (g < b ? 6 : 0); break;
-          case g: h = (b - r) / d + 2; break;
-          case b: h = (r - g) / d + 4; break;
-          default: h = 0;
+          case r:
+            h = (g - b) / d + (g < b ? 6 : 0);
+            break;
+          case g:
+            h = (b - r) / d + 2;
+            break;
+          case b:
+            h = (r - g) / d + 4;
+            break;
+          default:
+            h = 0;
         }
         h /= 6;
       }
-      
-      return `${Math.round(h * 360)} ${Math.round(s * 100)}% ${Math.round(l * 100)}%`;
+
+      return `${Math.round(h * 360)} ${Math.round(s * 100)}% ${Math.round(
+        l * 100
+      )}%`;
     };
 
     const primaryHsl = hexToHsl(scheme.primary);
 
     // Only change content colors, not backgrounds
-    root.style.setProperty('--primary', primaryHsl);
-    root.style.setProperty('--sidebar-primary', primaryHsl);
-    root.style.setProperty('--ring', primaryHsl);
-    root.style.setProperty('--sidebar-ring', primaryHsl);
+    root.style.setProperty("--primary", primaryHsl);
+    root.style.setProperty("--sidebar-primary", primaryHsl);
+    root.style.setProperty("--ring", primaryHsl);
+    root.style.setProperty("--sidebar-ring", primaryHsl);
 
     setIsOpen(false);
   };

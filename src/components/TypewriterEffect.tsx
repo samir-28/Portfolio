@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 
 const TypewriterEffect = () => {
-  const titles = ['Student', 'Quick Learner', 'Tech Enthusiast', 'Sport Enthusiast'];
+  const titles = ['Student','Django Developer', 'Quick Learner', 'Tech Enthusiast', 'Sport Enthusiast'];
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
   const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);

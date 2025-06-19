@@ -1,4 +1,3 @@
-
 import Layout from "@/components/Layout";
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
@@ -14,16 +13,15 @@ const Message = () => {
     subject: "",
     message: ""
   });
-  
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
-  
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    // Simple validation
+
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: "Please fill out all required fields",
@@ -31,33 +29,57 @@ const Message = () => {
       });
       return;
     }
-    
-    // Here you would normally send the form data to a server
-    console.log("Form submitted:", formData);
-    
-    // Show success message
-    toast({
-      title: "Message sent successfully!",
-      description: "I'll get back to you as soon as possible.",
-    });
-    
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: ""
-    });
+     const hasURL = /(https?:\/\/|www\.)\S+/i.test(formData.message);
+    if (hasURL) {
+      toast({
+        title: "Links are not allowed in the message",
+        description: "Please remove any URLs or website links.",
+        variant: "destructive",
+      });
+      return;
+    }
+    try {
+      const response = await fetch("https://formspree.io/f/xqablwqj", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: "Message sent successfully!",
+          description: "I'll get back to you as soon as possible.",
+        });
+
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        toast({
+          title: "Failed to send message",
+          description: result?.message || "Please try again later.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error sending message",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
-  
+
   return (
     <Layout>
       <div className="mb-12">
         <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
         <div className="w-12 h-1 bg-primary mb-6"></div>
-        
+
         <div className="max-w-2xl mx-auto">
-          {/* Contact Form */}
           <Card className="p-6 bg-card/80 border-border">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -72,7 +94,7 @@ const Message = () => {
                     required
                   />
                 </div>
-                
+
                 <div className="space-y-2">
                   <Label htmlFor="email">Your Email <span className="text-primary">*</span></Label>
                   <Input
@@ -86,7 +108,7 @@ const Message = () => {
                   />
                 </div>
               </div>
-              
+
               <div className="space-y-2">
                 <Label htmlFor="subject">Subject</Label>
                 <Input
@@ -97,7 +119,7 @@ const Message = () => {
                   placeholder="Enter subject"
                 />
               </div>
-              
+
               <div className="space-y-2">
                 <Label htmlFor="message">Message <span className="text-primary">*</span></Label>
                 <textarea
@@ -111,7 +133,7 @@ const Message = () => {
                   required
                 ></textarea>
               </div>
-              
+
               <button
                 type="submit"
                 className="px-8 py-3 bg-primary text-primary-foreground font-medium rounded-md hover:bg-primary/90 transition-colors"
