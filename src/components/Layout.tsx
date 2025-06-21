@@ -40,8 +40,6 @@ const Layout = ({ children }: LayoutProps) => {
     { name: "About", path: "/" },
     { name: "Resume", path: "/resume" },
     { name: "Portfolio", path: "/portfolio" },
-    { name: "Testimonials", path: "/testimonials" },
-    { name: "Blog", path: "/blog" },
     { name: "Message", path: "/message" },
   ];
 
