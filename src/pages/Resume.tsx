@@ -97,53 +97,53 @@ const Resume = () => {
             <h3 className="text-2xl font-semibold">Education</h3>
           </div>
 
-          <div className="relative max-w-4xl mx-auto">
+          <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-primary/30"></div>
+            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-border"></div>
             
-            <div className="space-y-8">
-              <div className="relative flex items-start gap-6">
+            <div className="space-y-6">
+              <div className="relative flex items-start gap-4">
                 {/* Timeline Dot */}
-                <div className="relative z-10 w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-lg">
-                  <BookOpen className="text-white w-6 h-6" />
+                <div className="relative z-10 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
+                  <BookOpen className="text-white w-5 h-5" />
                 </div>
                 
-                <Card className="flex-1 p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3">
-                    <h4 className="text-xl font-semibold mb-2 sm:mb-0">
+                <Card className="flex-1 p-4 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary group cursor-pointer">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+                    <h4 className="text-lg font-semibold mb-1 sm:mb-0 group-hover:text-primary transition-colors duration-300">
                       BSc in Computer Science and Information Technology
                     </h4>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary">
+                    <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
                       2022 - Present
                     </span>
                   </div>
-                  <p className="text-muted-foreground mb-3 font-medium">
+                  <p className="text-muted-foreground mb-2 font-medium text-sm">
                     Tribhuvan University
                   </p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-xs text-muted-foreground leading-relaxed">
                     Currently pursuing my bachelor's degree with a focus on web development, web designs and database management.
                   </p>
                 </Card>
               </div>
 
-              <div className="relative flex items-start gap-6">
-                <div className="relative z-10 w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-lg">
-                  <BookOpen className="text-white w-6 h-6" />
+              <div className="relative flex items-start gap-4">
+                <div className="relative z-10 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
+                  <BookOpen className="text-white w-5 h-5" />
                 </div>
                 
-                <Card className="flex-1 p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3">
-                    <h4 className="text-xl font-semibold mb-2 sm:mb-0">
+                <Card className="flex-1 p-4 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary group cursor-pointer">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+                    <h4 className="text-lg font-semibold mb-1 sm:mb-0 group-hover:text-primary transition-colors duration-300">
                       High School Diploma
                     </h4>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary">
+                    <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
                       2020 - 2022
                     </span>
                   </div>
-                  <p className="text-muted-foreground mb-3 font-medium">
+                  <p className="text-muted-foreground mb-2 font-medium text-sm">
                     Capital College And Research Center
                   </p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-xs text-muted-foreground leading-relaxed">
                     Completed high school education with science stream, focusing on mathematics, physics, and computer science.
                   </p>
                 </Card>
@@ -159,51 +159,51 @@ const Resume = () => {
             <h3 className="text-2xl font-semibold">Experience</h3>
           </div>
 
-          <div className="relative max-w-4xl mx-auto">
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-primary/30"></div>
+          <div className="relative">
+            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-border"></div>
             
-            <div className="space-y-8">
-              <div className="relative flex items-start gap-6">
-                <div className="relative z-10 w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-lg">
-                  <Briefcase className="text-white w-6 h-6" />
+            <div className="space-y-6">
+              <div className="relative flex items-start gap-4">
+                <div className="relative z-10 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
+                  <Briefcase className="text-white w-5 h-5" />
                 </div>
                 
-                <Card className="flex-1 p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3">
-                    <h4 className="text-xl font-semibold mb-2 sm:mb-0">
+                <Card className="flex-1 p-4 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary group cursor-pointer">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+                    <h4 className="text-lg font-semibold mb-1 sm:mb-0 group-hover:text-primary transition-colors duration-300">
                       Freelance Django Developer
                     </h4>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary">
+                    <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
                       Present
                     </span>
                   </div>
-                  <p className="text-muted-foreground mb-3 font-medium">
+                  <p className="text-muted-foreground mb-2 font-medium text-sm">
                     Self-employed
                   </p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-xs text-muted-foreground leading-relaxed">
                     Worked on personal website projects, emphasizing user experience and responsive design using HTML, CSS, JavaScript and Django.
                   </p>
                 </Card>
               </div>
 
-              <div className="relative flex items-start gap-6">
-                <div className="relative z-10 w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-lg">
-                  <Briefcase className="text-white w-6 h-6" />
+              <div className="relative flex items-start gap-4">
+                <div className="relative z-10 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
+                  <Briefcase className="text-white w-5 h-5" />
                 </div>
                 
-                <Card className="flex-1 p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3">
-                    <h4 className="text-xl font-semibold mb-2 sm:mb-0">
+                <Card className="flex-1 p-4 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary group cursor-pointer">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+                    <h4 className="text-lg font-semibold mb-1 sm:mb-0 group-hover:text-primary transition-colors duration-300">
                       Freelance Graphic Designer
                     </h4>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary">
+                    <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
                       Present
                     </span>
                   </div>
-                  <p className="text-muted-foreground mb-3 font-medium">
+                  <p className="text-muted-foreground mb-2 font-medium text-sm">
                     Self-employed
                   </p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-xs text-muted-foreground leading-relaxed">
                     Create personal project designs, including logos, branding materials, and marketing assets. Specialize in minimalist aesthetics and clear, impactful visual storytelling.
                   </p>
                 </Card>
@@ -253,10 +253,10 @@ const Resume = () => {
             <h3 className="text-2xl font-semibold">Certifications</h3>
           </div>
 
-          <div className="relative max-w-4xl mx-auto">
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-primary/30"></div>
+          <div className="relative">
+            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-border"></div>
             
-            <div className="space-y-8">
+            <div className="space-y-6">
               {[
                 {
                   title: "30 Days Python with Django",
@@ -279,24 +279,19 @@ const Resume = () => {
                   organization: "TechTrix-2023"
                 }
               ].map((cert, index) => (
-                <div key={index} className="relative flex items-start gap-6">
-                  <div className="relative z-10 w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-lg">
-                    <Award className="text-white w-6 h-6" />
+                <div key={index} className="relative flex items-start gap-4">
+                  <div className="relative z-10 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
+                    <Award className="text-white w-5 h-5" />
                   </div>
                   
-                  <Card className="flex-1 p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <Award className="text-primary w-6 h-6" />
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-semibold mb-2">
-                          {cert.title}
-                        </h4>
-                        <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary">
-                          {cert.organization}
-                        </span>
-                      </div>
+                  <Card className="flex-1 p-4 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary group cursor-pointer">
+                    <div>
+                      <h4 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors duration-300">
+                        {cert.title}
+                      </h4>
+                      <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
+                        {cert.organization}
+                      </span>
                     </div>
                   </Card>
                 </div>
