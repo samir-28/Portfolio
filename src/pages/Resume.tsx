@@ -108,19 +108,19 @@ const Resume = () => {
                   <BookOpen className="text-white w-5 h-5" />
                 </div>
                 
-                <Card className="flex-1 p-4 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary group cursor-pointer">
+                <Card className="flex-1 p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-l-4 border-l-primary group cursor-pointer bg-card/50 backdrop-blur-sm">
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
                     <h4 className="text-lg font-semibold mb-1 sm:mb-0 group-hover:text-primary transition-colors duration-300">
                       BSc in Computer Science and Information Technology
                     </h4>
-                    <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
                       2022 - Present
                     </span>
                   </div>
                   <p className="text-muted-foreground mb-2 font-medium text-sm">
                     Tribhuvan University
                   </p>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Currently pursuing my bachelor's degree with a focus on web development, web designs and database management.
                   </p>
                 </Card>
@@ -131,19 +131,19 @@ const Resume = () => {
                   <BookOpen className="text-white w-5 h-5" />
                 </div>
                 
-                <Card className="flex-1 p-4 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary group cursor-pointer">
+                <Card className="flex-1 p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-l-4 border-l-primary group cursor-pointer bg-card/50 backdrop-blur-sm">
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
                     <h4 className="text-lg font-semibold mb-1 sm:mb-0 group-hover:text-primary transition-colors duration-300">
                       High School Diploma
                     </h4>
-                    <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
                       2020 - 2022
                     </span>
                   </div>
                   <p className="text-muted-foreground mb-2 font-medium text-sm">
                     Capital College And Research Center
                   </p>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Completed high school education with science stream, focusing on mathematics, physics, and computer science.
                   </p>
                 </Card>
@@ -168,19 +168,19 @@ const Resume = () => {
                   <Briefcase className="text-white w-5 h-5" />
                 </div>
                 
-                <Card className="flex-1 p-4 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary group cursor-pointer">
+                <Card className="flex-1 p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-l-4 border-l-primary group cursor-pointer bg-card/50 backdrop-blur-sm">
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
                     <h4 className="text-lg font-semibold mb-1 sm:mb-0 group-hover:text-primary transition-colors duration-300">
                       Freelance Django Developer
                     </h4>
-                    <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
                       Present
                     </span>
                   </div>
                   <p className="text-muted-foreground mb-2 font-medium text-sm">
                     Self-employed
                   </p>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Worked on personal website projects, emphasizing user experience and responsive design using HTML, CSS, JavaScript and Django.
                   </p>
                 </Card>
@@ -191,19 +191,19 @@ const Resume = () => {
                   <Briefcase className="text-white w-5 h-5" />
                 </div>
                 
-                <Card className="flex-1 p-4 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary group cursor-pointer">
+                <Card className="flex-1 p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-l-4 border-l-primary group cursor-pointer bg-card/50 backdrop-blur-sm">
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
                     <h4 className="text-lg font-semibold mb-1 sm:mb-0 group-hover:text-primary transition-colors duration-300">
                       Freelance Graphic Designer
                     </h4>
-                    <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
                       Present
                     </span>
                   </div>
                   <p className="text-muted-foreground mb-2 font-medium text-sm">
                     Self-employed
                   </p>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Create personal project designs, including logos, branding materials, and marketing assets. Specialize in minimalist aesthetics and clear, impactful visual storytelling.
                   </p>
                 </Card>
@@ -223,20 +223,21 @@ const Resume = () => {
             {skillsWithFavicons.map((skill, index) => (
               <Card
                 key={skill.name}
-                className="p-4 text-center shadow-sm flex flex-col items-center gap-3 transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-primary/50 group cursor-pointer"
+                className="p-4 text-center shadow-sm flex flex-col items-center gap-3 transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-primary/50 group cursor-pointer relative overflow-hidden"
               >
                 <div className="relative">
                   <img
                     src={skill.favicon}
                     alt={skill.name}
-                    className="w-8 h-8 transition-all duration-300 group-hover:scale-110"
+                    className="w-8 h-8 transition-all duration-300 group-hover:scale-110 animate-pulse group-hover:animate-none"
                     onError={(e) => {
                       e.currentTarget.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Ccode%3E%3C/code%3E%3C/svg%3E";
                     }}
                   />
                 </div>
-                <span className="text-sm font-medium group-hover:text-primary transition-colors duration-300">
+                <span className="text-sm font-medium group-hover:text-primary transition-colors duration-300 relative">
                   {skill.name}
+                  <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 </span>
                 <span className="text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   {skill.proficiency}
@@ -284,12 +285,12 @@ const Resume = () => {
                     <Award className="text-white w-5 h-5" />
                   </div>
                   
-                  <Card className="flex-1 p-4 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary group cursor-pointer">
+                  <Card className="flex-1 p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-l-4 border-l-primary group cursor-pointer bg-card/50 backdrop-blur-sm">
                     <div>
                       <h4 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors duration-300">
                         {cert.title}
                       </h4>
-                      <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
                         {cert.organization}
                       </span>
                     </div>
