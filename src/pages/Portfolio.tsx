@@ -15,119 +15,118 @@ interface Project {
 
 const Portfolio = () => {
   const projects: Project[] = [
- {
-  id: 1,
-  title: "Personal Blog Website",
-  category: "web",
-  image: "/lovable-uploads/Blog.png",
-  description: "A clean and responsive blog platform built with Django, featuring post creation, editing, and user-friendly UI.",
-  link: "https://github.com/samir-28/BlogApp",
-},
-{
-  id: 2,
-  title: "E-commerce Website",
-  category: "web",
-  image: "/lovable-uploads/Medidoor.png",
-  description: "A full-featured online store with product listings, cart functionality, and checkout system built using modern web tools.",
-  link: "https://github.com/samir-28/MediDoorF",
-},
-{
-  id: 3,
-  title: "Pick Me App",
-  category: "app",
-  image: "/lovable-uploads/pickme.png",
-  description: "A smart travel-packing assistant that helps users organize and plan items for their trips effortlessly.",
-  link: "https://github.com/samir-28/PickMeProject",
-},
-{
-  id: 4,
-  title: "Music App",
-  category: "app",
-  image: "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  description: "A simple and elegant music player app supporting playback features and a minimal UI.",
-  link: "https://github.com/samir-28/MusicApp",
-},
-{
-  id: 5,
-  title: "Simple Website UI",
-  category: "design",
-  image: "/lovable-uploads/Page.png",
-  description: "Modern and minimal landing page UI design concept with responsive layout and visual clarity.",
-  link: "#",
-},
-{
-  id: 6,
-  title: "Ecommerce Website Design",
-  category: "web",
-  image: "/lovable-uploads/hamroshop.png",
-  description: "User-friendly and attractive e-commerce website design for an online retail business.",
-  link: "#",
-},
-{
-  id: 7,
-  title: "Poster Design",
-  category: "design",
-  image: "/lovable-uploads/MUSTANG.png",
-  description: "Bold and dynamic car-themed poster showcasing creativity and layout balance.",
-  link: "#",
-},
-{
-  id: 8,
-  title: "Event Logo Design",
-  category: "design",
-  image: "/lovable-uploads/Mind.png",
-  description: "Custom logo design crafted for a creative event, combining vibrant colors and modern typography.",
-  link: "#",
-},
-{
-  id: 9,
-  title: "Brand Logo Design",
-  category: "design",
-  image: "/lovable-uploads/PACIFIC.png",
-  description: "Professional brand identity design for a corporate client, emphasizing trust and clarity.",
-  link: "#",
-},
-{
-  id: 10,
-  title: "Mountain Landscape",
-  category: "photography",
-  image: "/lovable-uploads/20250209_164526.jpg",
-  description: "Breathtaking Himalayan mountain view captured during golden hour with natural lighting.",
-  link: "#",
-},
-{
-  id: 11,
-  title: "Fewa Lake with Morning Sunrise",
-  category: "photography",
-  image: "/lovable-uploads/20250211_072456.jpg",
-  description: "Tranquil scene of Fewa Lake at sunrise, capturing serenity and reflection.",
-  link: "#",
-},
-{
-  id: 12,
-  title: "Rupse Waterfall",
-  category: "photography",
-  image: "/lovable-uploads/20250207_112709.jpg",
-  description: "Powerful capture of Rupse Waterfall with mist and motion frozen in time.",
-  link: "#",
-},
-{
-  id: 13,
-  title: "Autumn Season Tree",
-  category: "photography",
-  image: "/lovable-uploads/20250209_111956.jpg",
-  description: "Golden leaves falling during autumn, symbolizing change and natural beauty.",
-  link: "#",
-},
-{
-  id: 14,
-  title: "Dhumba Lake",
-  category: "photography",
-  image: "/lovable-uploads/20250207_143253.jpg",
-  description: "Crystal-clear waters of Dhumba Lake nestled in the Mustang region, rich with cultural and natural essence.",
-  link: "#",
-}
-
+    {
+      id: 1,
+      title: "Personal Blog Website",
+      category: "web",
+      image: "/lovable-uploads/Blog.png",
+      description: "A clean and responsive blog platform built with Django, featuring post creation, editing, and user-friendly UI.",
+      link: "https://github.com/samir-28/BlogApp",
+    },
+    {
+      id: 2,
+      title: "E-commerce Website",
+      category: "web",
+      image: "/lovable-uploads/Medidoor.png",
+      description: "A full-featured online store with product listings, cart functionality, and checkout system built using modern web tools.",
+      link: "https://github.com/samir-28/MediDoorF",
+    },
+    {
+      id: 3,
+      title: "Pick Me App",
+      category: "app",
+      image: "/lovable-uploads/pickme.png",
+      description: "A smart travel-packing assistant that helps users organize and plan items for their trips effortlessly.",
+      link: "https://github.com/samir-28/PickMeProject",
+    },
+    {
+      id: 4,
+      title: "Music App",
+      category: "app",
+      image: "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "A simple and elegant music player app supporting playback features and a minimal UI.",
+      link: "https://github.com/samir-28/MusicApp",
+    },
+    {
+      id: 5,
+      title: "Simple Website UI",
+      category: "design",
+      image: "/lovable-uploads/Page.png",
+      description: "Modern and minimal landing page UI design concept with responsive layout and visual clarity.",
+      link: "#",
+    },
+    {
+      id: 6,
+      title: "Ecommerce Website Design",
+      category: "web",
+      image: "/lovable-uploads/hamroshop.png",
+      description: "User-friendly and attractive e-commerce website design for an online retail business.",
+      link: "#",
+    },
+    {
+      id: 7,
+      title: "Poster Design",
+      category: "design",
+      image: "/lovable-uploads/MUSTANG.png",
+      description: "Bold and dynamic car-themed poster showcasing creativity and layout balance.",
+      link: "#",
+    },
+    {
+      id: 8,
+      title: "Event Logo Design",
+      category: "design",
+      image: "/lovable-uploads/Mind.png",
+      description: "Custom logo design crafted for a creative event, combining vibrant colors and modern typography.",
+      link: "#",
+    },
+    {
+      id: 9,
+      title: "Brand Logo Design",
+      category: "design",
+      image: "/lovable-uploads/PACIFIC.png",
+      description: "Professional brand identity design for a corporate client, emphasizing trust and clarity.",
+      link: "#",
+    },
+    {
+      id: 10,
+      title: "Calculator App",
+      category: "app",
+      image: "/lovable-uploads/20250209_164526.jpg",
+      description: "A functional calculator mobile application with clean interface and standard mathematical operations.",
+      link: "#",
+    },
+    {
+      id: 11,
+      title: "Weather App",
+      category: "app",
+      image: "/lovable-uploads/20250211_072456.jpg",
+      description: "Weather forecasting mobile app with real-time data and beautiful weather animations.",
+      link: "#",
+    },
+    {
+      id: 12,
+      title: "Note Taking App",
+      category: "app",
+      image: "/lovable-uploads/20250207_112709.jpg",
+      description: "Simple and efficient note-taking application with organization features and cloud sync.",
+      link: "#",
+    },
+    {
+      id: 13,
+      title: "Todo List App",
+      category: "app",
+      image: "/lovable-uploads/20250209_111956.jpg",
+      description: "Task management application with priority settings, deadlines, and progress tracking.",
+      link: "#",
+    },
+    {
+      id: 14,
+      title: "Chat Application",
+      category: "app",
+      image: "/lovable-uploads/20250207_143253.jpg",
+      description: "Real-time messaging application with modern UI design and secure communication features.",
+      link: "#",
+    }
   ];
 
   const [filter, setFilter] = useState<string>("all");
@@ -183,11 +182,11 @@ const Portfolio = () => {
               Design
             </ToggleGroupItem>
             <ToggleGroupItem
-              value="photography"
-              aria-label="Photography"
+              value="app"
+              aria-label="App"
               className="px-4 transition-all duration-300 hover:scale-105"
             >
-              Photography
+              App
             </ToggleGroupItem>
           </ToggleGroup>
         </div>
