@@ -27,6 +27,26 @@ const Portfolio = () => {
     },
     {
       id: 2,
+      title: "SocialMediaManagementPlatform",
+      category: "web",
+      image:
+        "https://media.istockphoto.com/id/1070326848/vector/mix-race-people-avatar-social-media-global-communication-concept-internet-network-connection.jpg?s=612x612&w=0&k=20&c=krJeo_Mg1SO7Seo7tAN_lMqJu5plh5jsLBp2h4n2ZSw=",
+      description:
+        "A Django-powered platform to manage social media posts & user engagement.",
+      link: "https://github.com/samir-28/SocialMediaManagementApp",
+    },
+    {
+      id: 3,
+      title: "To-Do-Task",
+      category: "web",
+      image: "/lovable-uploads/Screenshot 2025-06-21 212755.png",
+      description:
+        "A task management web app built with Django for adding, updating, and tracking daily tasks with user-friendly UI and session-based login.",
+      link: "https://github.com/samir-28/ToDoTask-django-",
+    },
+
+    {
+      id: 4,
       title: "E-commerce Website",
       category: "web",
       image: "/lovable-uploads/Medidoor.png",
@@ -35,7 +55,7 @@ const Portfolio = () => {
       link: "https://github.com/samir-28/MediDoorF",
     },
     {
-      id: 3,
+      id: 5,
       title: "Pick Me App",
       category: "app",
       image: "/lovable-uploads/pickme.png",
@@ -44,7 +64,7 @@ const Portfolio = () => {
       link: "https://github.com/samir-28/PickMeProject",
     },
     {
-      id: 4,
+      id: 6,
       title: "Music App",
       category: "app",
       image:
@@ -54,7 +74,7 @@ const Portfolio = () => {
       link: "https://github.com/samir-28/MusicApp",
     },
     {
-      id: 5,
+      id: 7,
       title: "Simple Website UI",
       category: "design",
       image: "/lovable-uploads/Page.png",
@@ -63,7 +83,7 @@ const Portfolio = () => {
       link: "#",
     },
     {
-      id: 6,
+      id: 8,
       title: "Ecommerce Website Design",
       category: "web",
       image: "/lovable-uploads/hamroshop.png",
@@ -72,7 +92,7 @@ const Portfolio = () => {
       link: "#",
     },
     {
-      id: 7,
+      id: 9,
       title: "Poster Design",
       category: "design",
       image: "/lovable-uploads/MUSTANG.png",
@@ -81,7 +101,7 @@ const Portfolio = () => {
       link: "#",
     },
     {
-      id: 8,
+      id: 10,
       title: "Event Logo Design",
       category: "design",
       image: "/lovable-uploads/Mind.png",
@@ -90,57 +110,12 @@ const Portfolio = () => {
       link: "#",
     },
     {
-      id: 9,
+      id: 11,
       title: "Brand Logo Design",
       category: "design",
       image: "/lovable-uploads/PACIFIC.png",
       description:
         "Professional brand identity design for a corporate client, emphasizing trust and clarity.",
-      link: "#",
-    },
-    {
-      id: 10,
-      title: "Calculator App",
-      category: "app",
-      image: "/lovable-uploads/20250209_164526.jpg",
-      description:
-        "A functional calculator mobile application with clean interface and standard mathematical operations.",
-      link: "#",
-    },
-    {
-      id: 11,
-      title: "Weather App",
-      category: "app",
-      image: "/lovable-uploads/20250211_072456.jpg",
-      description:
-        "Weather forecasting mobile app with real-time data and beautiful weather animations.",
-      link: "#",
-    },
-    {
-      id: 12,
-      title: "Note Taking App",
-      category: "app",
-      image: "/lovable-uploads/20250207_112709.jpg",
-      description:
-        "Simple and efficient note-taking application with organization features and cloud sync.",
-      link: "#",
-    },
-    {
-      id: 13,
-      title: "Todo List App",
-      category: "app",
-      image: "/lovable-uploads/20250209_111956.jpg",
-      description:
-        "Task management application with priority settings, deadlines, and progress tracking.",
-      link: "#",
-    },
-    {
-      id: 14,
-      title: "Chat Application",
-      category: "app",
-      image: "/lovable-uploads/20250207_143253.jpg",
-      description:
-        "Real-time messaging application with modern UI design and secure communication features.",
       link: "#",
     },
   ];
@@ -159,7 +134,7 @@ const Portfolio = () => {
     if (project.link && project.link !== "#") {
       window.open(project.link, "_blank");
     } else {
-      navigate("/404"); 
+      navigate("/404");
     }
   };
 
@@ -308,18 +283,11 @@ const Portfolio = () => {
                       {selectedProject.category}
                     </p>
                   </div>
-                  <div className="p-4 bg-muted/50 rounded-lg">
-                    <p className="font-medium text-primary">Project Date</p>
-                    <p className="text-muted-foreground">2023</p>
-                  </div>
                 </div>
-
                 <p className="mb-6 leading-relaxed">
-                  Each project in this portfolio reflects my dedication to
-                  building meaningful, user-friendly solutions. Whether it's a
-                  web app, mobile design, or visual content, I focus on clean
-                  design, efficient performance, and thoughtful user experience
-                  — combining creativity with technical skill.
+                  Each project reflects my focus on building user-friendly,
+                  efficient solutions whether it's a web app, mobile design, or
+                  visual content-blending clean design with technical skill.
                 </p>
 
                 <button

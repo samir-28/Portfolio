@@ -1,4 +1,3 @@
-
 import Layout from "@/components/Layout";
 import { Card } from "@/components/ui/card";
 import { Palette, Code, Smartphone, Monitor } from "lucide-react";
@@ -11,37 +10,27 @@ const Index = () => {
         <h2 className="text-3xl font-bold mb-4">About Me</h2>
         <div className="w-12 h-1 bg-primary mb-6"></div>
 
-        <div className="space-y-6 text-muted-foreground leading-relaxed">
-          <p className="text-justify animate-fade-in transition-all duration-700 hover:text-foreground cursor-pointer transform hover:scale-[1.02]" style={{ animationDelay: '0.2s' }}>
-            Hi! I'm Samir Bajgain, an undergraduate student pursuing Computer
-            Science and Information Technology [CSIT] at Tribhuvan University.
-            I'm a curious and creative individual who enjoys solving problems
-            and bringing ideas to life. I thrive in environments where I can
-            learn continuously and collaborate with others to create meaningful
-            outcomes. Outside of academics, I enjoy exploring new concepts,
-            whether it's through reading, traveling or simply observing the
-            world around me.
+        <div className="space-y-6 text-muted-foreground leading-relaxed text-justify text-base">
+          <p
+            className="animate-fade-in transition-all duration-700 hover:text-foreground cursor-pointer transform hover:scale-[1.02]"
+            style={{ animationDelay: "0.2s" }}
+          >
+            Hi! I'm Samir Bajgain, an undergraduate CSIT student at Tribhuvan
+            University with a strong passion for web development, especially
+            using Django. I enjoy solving real-world problems through clean,
+            scalable code and have experience building full-stack applications
+            with Django and Django REST Framework. I'm also familiar with
+            frontend tools like HTML, CSS, JavaScript, and Bootstrap, and I love
+            crafting solutions that are both functional and user-friendly.
           </p>
 
-          <p className="text-justify animate-fade-in transition-all duration-700 hover:text-foreground cursor-pointer transform hover:scale-[1.02]" style={{ animationDelay: '0.4s' }}>
-            My primary interest lies in web development, particularly with
-            Django. I have experience building full-stack applications using
-            Django and Django REST Framework, and I'm also comfortable working
-            with frontend technologies like HTML, CSS, JavaScript, and
-            Bootstrap. I enjoy designing efficient, scalable systems and
-            developing clean, well-documented code that delivers real value to
-            users.
-          </p>
-
-          <p className="text-justify animate-fade-in transition-all duration-700 hover:text-foreground cursor-pointer transform hover:scale-[1.02]" style={{ animationDelay: '0.6s' }}>
-            Beyond coding, I'm a sports enthusiast who finds energy and balance
-            through physical activity and team spirit. I also have a deep
-            appreciation for visual design and user experience, often exploring
-            tools to create aesthetically pleasing interfaces. I'm committed to
-            continuous learning, keeping up with the latest industry trends, and
-            growing both personally and professionally. I believe in staying
-            active, staying curious, and always striving to deliver work that
-            reflects passion and purpose.
+          <p
+            className="animate-fade-in transition-all duration-700 hover:text-foreground cursor-pointer transform hover:scale-[1.02]"
+            style={{ animationDelay: "0.4s" }}
+          >
+            Outside coding, I’m a sports enthusiast who also values good design
+            and user experience. I believe in continuous learning and building
+            things that reflect creativity, purpose, and growth.
           </p>
         </div>
       </div>
@@ -114,7 +103,8 @@ const Index = () => {
                   App Development
                 </h3>
                 <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300 leading-relaxed">
-                  I create high-quality mobile and web applications with modern technologies and user-focused design.
+                  I create high-quality mobile and web applications with modern
+                  technologies and user-focused design.
                 </p>
               </div>
             </div>

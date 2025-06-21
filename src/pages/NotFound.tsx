@@ -21,8 +21,8 @@ const NotFound = () => {
 
         {/* Message */}
         <p className="text-muted-foreground text-center max-w-md mb-8">
-          Whoops! Looks like you took a wrong turn somewhere in the multiverse
-          🌀
+          Whoops! Looks like you took a wrong turn somewhere in the multiverse !!
+          
         </p>
 
         {/* Back to Home Button */}
