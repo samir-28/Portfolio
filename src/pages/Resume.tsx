@@ -84,7 +84,7 @@ const Resume = () => {
 
   return (
     <Layout>
-      <div className="space-y-12">
+      <div className="space-y-16">
         <div>
           <h2 className="text-3xl font-bold mb-4">Resume</h2>
           <div className="w-12 h-1 bg-primary mb-6"></div>
@@ -92,61 +92,68 @@ const Resume = () => {
 
         {/* Education Timeline */}
         <div>
-          <div className="flex items-center gap-3 mb-8">
+          <div className="flex items-center gap-3 mb-12">
             <BookOpen className="text-primary" size={24} />
             <h3 className="text-2xl font-semibold">Education</h3>
           </div>
 
           <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-primary/30"></div>
+            {/* Enhanced Timeline Line */}
+            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-primary/20"></div>
             
-            <div className="space-y-8">
-              <div className="relative flex items-start gap-6 group">
-                {/* Timeline Dot */}
-                <div className="relative z-10 w-8 h-8 bg-primary rounded-full flex items-center justify-center group-hover:scale-125 transition-transform duration-300">
-                  <div className="w-3 h-3 bg-white rounded-full"></div>
+            <div className="space-y-12">
+              <div className="relative flex items-start gap-8 group">
+                {/* Enhanced Timeline Dot */}
+                <div className="relative z-10 w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-lg group-hover:shadow-primary/50">
+                  <BookOpen className="text-white w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                  <div className="absolute inset-0 bg-primary/30 rounded-full animate-ping group-hover:animate-pulse"></div>
                 </div>
                 
-                <Card className="flex-1 p-6 bg-card/80 border-border transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:-translate-y-2 hover:bg-card/90 hover:border-primary/30 group cursor-pointer">
-                  <div className="flex flex-wrap justify-between mb-2">
-                    <h4 className="text-lg font-medium group-hover:text-primary transition-colors duration-300">
-                      BSc in Computer Science and Information Technology
-                    </h4>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/20 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                      2022 - Present
-                    </span>
+                <Card className="flex-1 p-8 bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-sm border-border/50 transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:-translate-y-3 hover:bg-gradient-to-br hover:from-card hover:to-card/80 hover:border-primary/30 group cursor-pointer relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                  <div className="relative z-10">
+                    <div className="flex flex-wrap justify-between items-start mb-4">
+                      <h4 className="text-xl font-semibold group-hover:text-primary transition-colors duration-300">
+                        BSc in Computer Science and Information Technology
+                      </h4>
+                      <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-primary/20 to-primary/10 text-primary group-hover:from-primary group-hover:to-primary/80 group-hover:text-white transition-all duration-300 shadow-sm">
+                        2022 - Present
+                      </span>
+                    </div>
+                    <p className="text-muted-foreground mb-3 font-medium group-hover:text-muted-foreground/90 transition-colors duration-300">
+                      Tribhuvan University
+                    </p>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300 leading-relaxed">
+                      Currently pursuing my bachelor's degree with a focus on web development, web designs and database management.
+                    </p>
                   </div>
-                  <p className="text-muted-foreground mb-2 group-hover:text-muted-foreground/80 transition-colors duration-300">
-                    Tribhuvan University
-                  </p>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
-                    Currently pursuing my bachelor's degree with a focus on web development, web designs and database management.
-                  </p>
                 </Card>
               </div>
 
-              <div className="relative flex items-start gap-6 group">
-                {/* Timeline Dot */}
-                <div className="relative z-10 w-8 h-8 bg-primary rounded-full flex items-center justify-center group-hover:scale-125 transition-transform duration-300">
-                  <div className="w-3 h-3 bg-white rounded-full"></div>
+              <div className="relative flex items-start gap-8 group">
+                <div className="relative z-10 w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-lg group-hover:shadow-primary/50">
+                  <BookOpen className="text-white w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                  <div className="absolute inset-0 bg-primary/30 rounded-full animate-ping group-hover:animate-pulse"></div>
                 </div>
                 
-                <Card className="flex-1 p-6 bg-card/80 border-border transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:-translate-y-2 hover:bg-card/90 hover:border-primary/30 group cursor-pointer">
-                  <div className="flex flex-wrap justify-between mb-2">
-                    <h4 className="text-lg font-medium group-hover:text-primary transition-colors duration-300">
-                      High School Diploma
-                    </h4>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/20 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                      2020 - 2022
-                    </span>
+                <Card className="flex-1 p-8 bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-sm border-border/50 transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:-translate-y-3 hover:bg-gradient-to-br hover:from-card hover:to-card/80 hover:border-primary/30 group cursor-pointer relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                  <div className="relative z-10">
+                    <div className="flex flex-wrap justify-between items-start mb-4">
+                      <h4 className="text-xl font-semibold group-hover:text-primary transition-colors duration-300">
+                        High School Diploma
+                      </h4>
+                      <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-primary/20 to-primary/10 text-primary group-hover:from-primary group-hover:to-primary/80 group-hover:text-white transition-all duration-300 shadow-sm">
+                        2020 - 2022
+                      </span>
+                    </div>
+                    <p className="text-muted-foreground mb-3 font-medium group-hover:text-muted-foreground/90 transition-colors duration-300">
+                      Capital College And Research Center
+                    </p>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300 leading-relaxed">
+                      Completed high school education with science stream, focusing on mathematics, physics, and computer science.
+                    </p>
                   </div>
-                  <p className="text-muted-foreground mb-2 group-hover:text-muted-foreground/80 transition-colors duration-300">
-                    Capital College And Research Center
-                  </p>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
-                    Completed high school education with science stream, focusing on mathematics, physics, and computer science.
-                  </p>
                 </Card>
               </div>
             </div>
@@ -155,61 +162,66 @@ const Resume = () => {
 
         {/* Experience Timeline */}
         <div>
-          <div className="flex items-center gap-3 mb-8">
+          <div className="flex items-center gap-3 mb-12">
             <Briefcase className="text-primary" size={24} />
             <h3 className="text-2xl font-semibold">Experience</h3>
           </div>
 
           <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-primary/30"></div>
+            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-primary/20"></div>
             
-            <div className="space-y-8">
-              <div className="relative flex items-start gap-6 group">
-                {/* Timeline Dot */}
-                <div className="relative z-10 w-8 h-8 bg-primary rounded-full flex items-center justify-center group-hover:scale-125 transition-transform duration-300">
-                  <div className="w-3 h-3 bg-white rounded-full"></div>
+            <div className="space-y-12">
+              <div className="relative flex items-start gap-8 group">
+                <div className="relative z-10 w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-lg group-hover:shadow-primary/50">
+                  <Briefcase className="text-white w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                  <div className="absolute inset-0 bg-primary/30 rounded-full animate-ping group-hover:animate-pulse"></div>
                 </div>
                 
-                <Card className="flex-1 p-6 bg-card/80 border-border transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:-translate-y-2 hover:bg-card/90 hover:border-primary/30 group cursor-pointer">
-                  <div className="flex flex-wrap justify-between mb-2">
-                    <h4 className="text-lg font-medium group-hover:text-primary transition-colors duration-300">
-                      Freelance Django Developer
-                    </h4>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/20 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                      Present
-                    </span>
+                <Card className="flex-1 p-8 bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-sm border-border/50 transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:-translate-y-3 hover:bg-gradient-to-br hover:from-card hover:to-card/80 hover:border-primary/30 group cursor-pointer relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                  <div className="relative z-10">
+                    <div className="flex flex-wrap justify-between items-start mb-4">
+                      <h4 className="text-xl font-semibold group-hover:text-primary transition-colors duration-300">
+                        Freelance Django Developer
+                      </h4>
+                      <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-green-500/20 to-green-400/10 text-green-600 group-hover:from-green-500 group-hover:to-green-400 group-hover:text-white transition-all duration-300 shadow-sm">
+                        Present
+                      </span>
+                    </div>
+                    <p className="text-muted-foreground mb-3 font-medium group-hover:text-muted-foreground/90 transition-colors duration-300">
+                      Self-employed
+                    </p>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300 leading-relaxed">
+                      Worked on personal website projects, emphasizing user experience and responsive design using HTML, CSS, JavaScript and Django.
+                    </p>
                   </div>
-                  <p className="text-muted-foreground mb-2 group-hover:text-muted-foreground/80 transition-colors duration-300">
-                    Self-employed
-                  </p>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
-                    Worked on personal website projects, emphasizing user experience and responsive design using HTML, CSS, JavaScript and Django.
-                  </p>
                 </Card>
               </div>
 
-              <div className="relative flex items-start gap-6 group">
-                {/* Timeline Dot */}
-                <div className="relative z-10 w-8 h-8 bg-primary rounded-full flex items-center justify-center group-hover:scale-125 transition-transform duration-300">
-                  <div className="w-3 h-3 bg-white rounded-full"></div>
+              <div className="relative flex items-start gap-8 group">
+                <div className="relative z-10 w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-lg group-hover:shadow-primary/50">
+                  <Briefcase className="text-white w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                  <div className="absolute inset-0 bg-primary/30 rounded-full animate-ping group-hover:animate-pulse"></div>
                 </div>
                 
-                <Card className="flex-1 p-6 bg-card/80 border-border transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:-translate-y-2 hover:bg-card/90 hover:border-primary/30 group cursor-pointer">
-                  <div className="flex flex-wrap justify-between mb-2">
-                    <h4 className="text-lg font-medium group-hover:text-primary transition-colors duration-300">
-                      Freelance Graphic Designer
-                    </h4>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/20 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                      Present
-                    </span>
+                <Card className="flex-1 p-8 bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-sm border-border/50 transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:-translate-y-3 hover:bg-gradient-to-br hover:from-card hover:to-card/80 hover:border-primary/30 group cursor-pointer relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                  <div className="relative z-10">
+                    <div className="flex flex-wrap justify-between items-start mb-4">
+                      <h4 className="text-xl font-semibold group-hover:text-primary transition-colors duration-300">
+                        Freelance Graphic Designer
+                      </h4>
+                      <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-green-500/20 to-green-400/10 text-green-600 group-hover:from-green-500 group-hover:to-green-400 group-hover:text-white transition-all duration-300 shadow-sm">
+                        Present
+                      </span>
+                    </div>
+                    <p className="text-muted-foreground mb-3 font-medium group-hover:text-muted-foreground/90 transition-colors duration-300">
+                      Self-employed
+                    </p>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300 leading-relaxed">
+                      Create personal project designs, including logos, branding materials, and marketing assets. Specialize in minimalist aesthetics and clear, impactful visual storytelling.
+                    </p>
                   </div>
-                  <p className="text-muted-foreground mb-2 group-hover:text-muted-foreground/80 transition-colors duration-300">
-                    Self-employed
-                  </p>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
-                    Create personal project designs, including logos, branding materials, and marketing assets. Specialize in minimalist aesthetics and clear, impactful visual storytelling.
-                  </p>
                 </Card>
               </div>
             </div>
@@ -218,7 +230,7 @@ const Resume = () => {
 
         {/* Skills */}
         <div>
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center gap-3 mb-8">
             <Code className="text-primary" size={24} />
             <h3 className="text-2xl font-semibold">My Skills</h3>
           </div>
@@ -258,130 +270,68 @@ const Resume = () => {
 
         {/* Certifications Timeline */}
         <div>
-          <div className="flex items-center gap-3 mb-8">
+          <div className="flex items-center gap-3 mb-12">
             <Award className="text-primary" size={24} />
             <h3 className="text-2xl font-semibold">Certifications</h3>
           </div>
 
           <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-primary/30"></div>
+            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-primary/20"></div>
             
-            <div className="space-y-8">
-              <div className="relative flex items-start gap-6 group">
-                {/* Timeline Dot */}
-                <div className="relative z-10 w-8 h-8 bg-primary rounded-full flex items-center justify-center group-hover:scale-125 transition-transform duration-300">
-                  <Award className="text-white w-4 h-4" />
-                </div>
-                
-                <Card className="flex-1 p-4 bg-card/80 border-border transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:-translate-y-2 hover:bg-card/90 hover:border-primary/30 group cursor-pointer">
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                      <Award className="text-primary w-5 h-5 group-hover:text-white transition-colors duration-300" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-medium group-hover:text-primary transition-colors duration-300">
-                        30 Days Python with Django
-                      </h4>
-                      <p className="text-sm text-muted-foreground group-hover:text-muted-foreground/80 transition-colors duration-300">
-                        Digital Pathshala - 2024
-                      </p>
-                    </div>
+            <div className="space-y-12">
+              {[
+                {
+                  title: "30 Days Python with Django",
+                  organization: "Digital Pathshala - 2024",
+                  color: "from-blue-500/20 to-blue-400/10 text-blue-600 group-hover:from-blue-500 group-hover:to-blue-400"
+                },
+                {
+                  title: "Python Bootcamp",
+                  organization: "By Python Users Group Nepal",
+                  color: "from-yellow-500/20 to-yellow-400/10 text-yellow-600 group-hover:from-yellow-500 group-hover:to-yellow-400"
+                },
+                {
+                  title: "Sixty Hours Android Workshop Training",
+                  organization: "By TechTrix Nepal",
+                  color: "from-green-500/20 to-green-400/10 text-green-600 group-hover:from-green-500 group-hover:to-green-400"
+                },
+                {
+                  title: "National Webinar on B.Sc. CSIT Internship Report Writing",
+                  organization: "By treeleaf.ai",
+                  color: "from-purple-500/20 to-purple-400/10 text-purple-600 group-hover:from-purple-500 group-hover:to-purple-400"
+                },
+                {
+                  title: "Organizer And Core Team Member",
+                  organization: "TechTrix-2023",
+                  color: "from-red-500/20 to-red-400/10 text-red-600 group-hover:from-red-500 group-hover:to-red-400"
+                }
+              ].map((cert, index) => (
+                <div key={index} className="relative flex items-start gap-8 group">
+                  <div className="relative z-10 w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-lg group-hover:shadow-primary/50">
+                    <Award className="text-white w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                    <div className="absolute inset-0 bg-primary/30 rounded-full animate-ping group-hover:animate-pulse"></div>
                   </div>
-                </Card>
-              </div>
-
-              <div className="relative flex items-start gap-6 group">
-                {/* Timeline Dot */}
-                <div className="relative z-10 w-8 h-8 bg-primary rounded-full flex items-center justify-center group-hover:scale-125 transition-transform duration-300">
-                  <Award className="text-white w-4 h-4" />
+                  
+                  <Card className="flex-1 p-6 bg-gradient-to-br from-card/90 to-card/60 backdrop-blur-sm border-border/50 transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:-translate-y-3 hover:bg-gradient-to-br hover:from-card hover:to-card/80 hover:border-primary/30 group cursor-pointer relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                    <div className="relative z-10">
+                      <div className="flex items-center gap-6">
+                        <div className="w-14 h-14 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primary/80 group-hover:scale-110 transition-all duration-500 shadow-sm">
+                          <Award className="text-primary w-6 h-6 group-hover:text-white transition-colors duration-300" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-lg font-semibold group-hover:text-primary transition-colors duration-300 mb-2">
+                            {cert.title}
+                          </h4>
+                          <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r ${cert.color} group-hover:text-white transition-all duration-300 shadow-sm`}>
+                            {cert.organization}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </Card>
                 </div>
-                
-                <Card className="flex-1 p-4 bg-card/80 border-border transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:-translate-y-2 hover:bg-card/90 hover:border-primary/30 group cursor-pointer">
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                      <Award className="text-primary w-5 h-5 group-hover:text-white transition-colors duration-300" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-medium group-hover:text-primary transition-colors duration-300">
-                        Python Bootcamp
-                      </h4>
-                      <p className="text-sm text-muted-foreground group-hover:text-muted-foreground/80 transition-colors duration-300">
-                        By Python Users Group Nepal
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-              </div>
-
-              <div className="relative flex items-start gap-6 group">
-                {/* Timeline Dot */}
-                <div className="relative z-10 w-8 h-8 bg-primary rounded-full flex items-center justify-center group-hover:scale-125 transition-transform duration-300">
-                  <Award className="text-white w-4 h-4" />
-                </div>
-                
-                <Card className="flex-1 p-4 bg-card/80 border-border transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:-translate-y-2 hover:bg-card/90 hover:border-primary/30 group cursor-pointer">
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                      <Award className="text-primary w-5 h-5 group-hover:text-white transition-colors duration-300" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-medium group-hover:text-primary transition-colors duration-300">
-                        Sixty Hours Android Workshop Training
-                      </h4>
-                      <p className="text-sm text-muted-foreground group-hover:text-muted-foreground/80 transition-colors duration-300">
-                        By TechTrix Nepal
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-              </div>
-
-              <div className="relative flex items-start gap-6 group">
-                {/* Timeline Dot */}
-                <div className="relative z-10 w-8 h-8 bg-primary rounded-full flex items-center justify-center group-hover:scale-125 transition-transform duration-300">
-                  <Award className="text-white w-4 h-4" />
-                </div>
-                
-                <Card className="flex-1 p-4 bg-card/80 border-border transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:-translate-y-2 hover:bg-card/90 hover:border-primary/30 group cursor-pointer">
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                      <Award className="text-primary w-5 h-5 group-hover:text-white transition-colors duration-300" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-medium group-hover:text-primary transition-colors duration-300">
-                        National Webinar on B.Sc. CSIT Internship Report Writing
-                      </h4>
-                      <p className="text-sm text-muted-foreground group-hover:text-muted-foreground/80 transition-colors duration-300">
-                        By treeleaf.ai
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-              </div>
-
-              <div className="relative flex items-start gap-6 group">
-                {/* Timeline Dot */}
-                <div className="relative z-10 w-8 h-8 bg-primary rounded-full flex items-center justify-center group-hover:scale-125 transition-transform duration-300">
-                  <Award className="text-white w-4 h-4" />
-                </div>
-                
-                <Card className="flex-1 p-4 bg-card/80 border-border transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:-translate-y-2 hover:bg-card/90 hover:border-primary/30 group cursor-pointer">
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                      <Award className="text-primary w-5 h-5 group-hover:text-white transition-colors duration-300" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-medium group-hover:text-primary transition-colors duration-300">
-                        Organizer And Core Team Member
-                      </h4>
-                      <p className="text-sm text-muted-foreground group-hover:text-muted-foreground/80 transition-colors duration-300">
-                        TechTrix-2023
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-              </div>
+              ))}
             </div>
           </div>
         </div>
