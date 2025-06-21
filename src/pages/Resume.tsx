@@ -1,4 +1,3 @@
-
 import Layout from "@/components/Layout";
 import { Card } from "@/components/ui/card";
 import { BookOpen, Briefcase, Award, Code } from "lucide-react";
@@ -7,77 +6,92 @@ const Resume = () => {
   const skillsWithFavicons = [
     {
       name: "HTML",
-      favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
       proficiency: "90%",
     },
     {
       name: "CSS",
-      favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
       proficiency: "85%",
     },
     {
       name: "Bootstrap",
-      favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
       proficiency: "70%",
     },
     {
       name: "JavaScript",
-      favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
       proficiency: "80%",
     },
     {
       name: "React",
-      favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
       proficiency: "60%",
     },
     {
       name: "Tailwind CSS",
-      favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
       proficiency: "60%",
     },
     {
       name: "Node.js",
-      favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
       proficiency: "30%",
     },
     {
       name: "Python",
-      favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
       proficiency: "90%",
     },
     {
       name: "Django",
-      favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
       proficiency: "85%",
     },
     {
       name: "PHP",
-      favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
       proficiency: "45%",
     },
     {
       name: "jQuery",
-      favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg",
       proficiency: "40%",
     },
     {
       name: "Figma",
-      favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
       proficiency: "80%",
     },
     {
       name: "Canva",
-      favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg",
       proficiency: "80%",
     },
     {
       name: "Photoshop",
-      favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg",
-      proficiency: "75%",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg",
+      proficiency: "45%",
     },
     {
       name: "Microsoft Tools",
-      favicon: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+      favicon:
+        "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
       proficiency: "95%",
     },
   ];
@@ -100,14 +114,14 @@ const Resume = () => {
           <div className="relative">
             {/* Timeline Line */}
             <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-border"></div>
-            
+
             <div className="space-y-6">
               <div className="relative flex items-start gap-4">
                 {/* Timeline Dot */}
                 <div className="relative z-10 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
                   <BookOpen className="text-white w-5 h-5" />
                 </div>
-                
+
                 <Card className="flex-1 p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-l-4 border-l-primary group cursor-pointer bg-card/50 backdrop-blur-sm">
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
                     <h4 className="text-lg font-semibold mb-1 sm:mb-0 group-hover:text-primary transition-colors duration-300">
@@ -121,7 +135,8 @@ const Resume = () => {
                     Tribhuvan University
                   </p>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Currently pursuing my bachelor's degree with a focus on web development, web designs and database management.
+                    Currently pursuing my bachelor's degree with a focus on web
+                    development, web designs and database management.
                   </p>
                 </Card>
               </div>
@@ -130,7 +145,7 @@ const Resume = () => {
                 <div className="relative z-10 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
                   <BookOpen className="text-white w-5 h-5" />
                 </div>
-                
+
                 <Card className="flex-1 p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-l-4 border-l-primary group cursor-pointer bg-card/50 backdrop-blur-sm">
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
                     <h4 className="text-lg font-semibold mb-1 sm:mb-0 group-hover:text-primary transition-colors duration-300">
@@ -144,7 +159,8 @@ const Resume = () => {
                     Capital College And Research Center
                   </p>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Completed high school education with science stream, focusing on mathematics, physics, and computer science.
+                    Completed high school education with science stream,
+                    focusing on mathematics, physics, and computer science.
                   </p>
                 </Card>
               </div>
@@ -161,13 +177,13 @@ const Resume = () => {
 
           <div className="relative">
             <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-border"></div>
-            
+
             <div className="space-y-6">
               <div className="relative flex items-start gap-4">
                 <div className="relative z-10 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
                   <Briefcase className="text-white w-5 h-5" />
                 </div>
-                
+
                 <Card className="flex-1 p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-l-4 border-l-primary group cursor-pointer bg-card/50 backdrop-blur-sm">
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
                     <h4 className="text-lg font-semibold mb-1 sm:mb-0 group-hover:text-primary transition-colors duration-300">
@@ -181,7 +197,9 @@ const Resume = () => {
                     Self-employed
                   </p>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Worked on personal website projects, emphasizing user experience and responsive design using HTML, CSS, JavaScript and Django.
+                    Worked on personal website projects, emphasizing user
+                    experience and responsive design using HTML, CSS, JavaScript
+                    and Django.
                   </p>
                 </Card>
               </div>
@@ -190,7 +208,7 @@ const Resume = () => {
                 <div className="relative z-10 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
                   <Briefcase className="text-white w-5 h-5" />
                 </div>
-                
+
                 <Card className="flex-1 p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-l-4 border-l-primary group cursor-pointer bg-card/50 backdrop-blur-sm">
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
                     <h4 className="text-lg font-semibold mb-1 sm:mb-0 group-hover:text-primary transition-colors duration-300">
@@ -204,7 +222,9 @@ const Resume = () => {
                     Self-employed
                   </p>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Create personal project designs, including logos, branding materials, and marketing assets. Specialize in minimalist aesthetics and clear, impactful visual storytelling.
+                    Create personal project designs, including logos, branding
+                    materials, and marketing assets. Specialize in minimalist
+                    aesthetics and clear, impactful visual storytelling.
                   </p>
                 </Card>
               </div>
@@ -214,34 +234,40 @@ const Resume = () => {
 
         {/* Skills */}
         <div>
-          <div className="flex items-center gap-3 mb-8">
+          <div className="flex items-center gap-3 mb-6">
             <Code className="text-primary" size={24} />
             <h3 className="text-2xl font-semibold">My Skills</h3>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {skillsWithFavicons.map((skill, index) => (
               <Card
                 key={skill.name}
-                className="p-4 text-center shadow-sm flex flex-col items-center gap-3 transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-primary/50 group cursor-pointer relative overflow-hidden"
+                className="p-6 bg-card/80 border-border text-center shadow-sm flex flex-col items-center gap-3 transform transition-all duration-500 hover:shadow-2xl hover:scale-110 hover:-translate-y-3 hover:bg-gradient-to-br hover:from-primary/10 hover:to-primary/5 hover:border-primary/50 group cursor-pointer animate-float"
+                style={{
+                  animationDelay: `${index * 0.1}s`,
+                  animationDuration: `${3 + (index % 3)}s`,
+                }}
               >
                 <div className="relative">
                   <img
                     src={skill.favicon}
                     alt={skill.name}
-                    className="w-8 h-8 transition-all duration-300 group-hover:scale-110 animate-pulse group-hover:animate-none"
+                    className="w-10 h-10 transition-all duration-500 group-hover:scale-125 group-hover:rotate-12 group-hover:drop-shadow-lg"
                     onError={(e) => {
-                      e.currentTarget.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Ccode%3E%3C/code%3E%3C/svg%3E";
+                      e.currentTarget.src =
+                        "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Ccode%3E%3C/code%3E%3C/svg%3E";
                     }}
                   />
+                  <div className="absolute inset-0 bg-primary/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
                 </div>
-                <span className="text-sm font-medium group-hover:text-primary transition-colors duration-300 relative">
+                <span className="text-sm font-medium group-hover:text-primary group-hover:font-semibold transition-all duration-300">
                   {skill.name}
-                  <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 </span>
-                <span className="text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="text-xs font-medium text-muted-foreground group-hover:text-primary opacity-0 group-hover:opacity-100 transition-all duration-500">
                   {skill.proficiency}
                 </span>
+                <div className="w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-500"></div>
               </Card>
             ))}
           </div>
@@ -256,35 +282,36 @@ const Resume = () => {
 
           <div className="relative">
             <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-border"></div>
-            
+
             <div className="space-y-6">
               {[
                 {
                   title: "30 Days Python with Django",
-                  organization: "Digital Pathshala - 2024"
+                  organization: "Digital Pathshala - 2024",
                 },
                 {
                   title: "Python Bootcamp",
-                  organization: "By Python Users Group Nepal"
+                  organization: "By Python Users Group Nepal",
                 },
                 {
                   title: "Sixty Hours Android Workshop Training",
-                  organization: "By TechTrix Nepal"
+                  organization: "By TechTrix Nepal",
                 },
                 {
-                  title: "National Webinar on B.Sc. CSIT Internship Report Writing",
-                  organization: "By treeleaf.ai"
+                  title:
+                    "National Webinar on B.Sc. CSIT Internship Report Writing",
+                  organization: "By treeleaf.ai",
                 },
                 {
                   title: "Organizer And Core Team Member",
-                  organization: "TechTrix-2023"
-                }
+                  organization: "TechTrix-2023",
+                },
               ].map((cert, index) => (
                 <div key={index} className="relative flex items-start gap-4">
                   <div className="relative z-10 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
                     <Award className="text-white w-5 h-5" />
                   </div>
-                  
+
                   <Card className="flex-1 p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-l-4 border-l-primary group cursor-pointer bg-card/50 backdrop-blur-sm">
                     <div>
                       <h4 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors duration-300">
