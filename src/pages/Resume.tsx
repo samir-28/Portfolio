@@ -5,96 +5,81 @@ import { BookOpen, Briefcase, Award, Code } from "lucide-react";
 const Resume = () => {
   const skillsWithFavicons = [
     {
-      name: "HTML",
-      favicon:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-      proficiency: "90%",
-    },
-    {
-      name: "CSS",
-      favicon:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-      proficiency: "85%",
-    },
-    {
-      name: "Bootstrap",
-      favicon:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
-      proficiency: "70%",
-    },
-    {
-      name: "JavaScript",
-      favicon:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-      proficiency: "80%",
-    },
-    {
-      name: "React",
-      favicon:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-      proficiency: "60%",
-    },
-    {
-      name: "Tailwind CSS",
-      favicon:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
-      proficiency: "60%",
-    },
-    {
-      name: "Node.js",
-      favicon:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-      proficiency: "30%",
-    },
-    {
-      name: "Python",
-      favicon:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-      proficiency: "90%",
-    },
-    {
-      name: "Django",
-      favicon:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
-      proficiency: "85%",
-    },
-    {
-      name: "PHP",
-      favicon:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
-      proficiency: "45%",
-    },
-    {
-      name: "jQuery",
-      favicon:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg",
-      proficiency: "40%",
-    },
-    {
-      name: "Figma",
-      favicon:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
-      proficiency: "80%",
-    },
-    {
-      name: "Canva",
-      favicon:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg",
-      proficiency: "80%",
-    },
-    {
-      name: "Photoshop",
-      favicon:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg",
-      proficiency: "45%",
-    },
-    {
-      name: "Microsoft Tools",
-      favicon:
-        "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
-      proficiency: "95%",
-    },
-  ];
+    name: "HTML",
+    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    level: "intermediate",
+  },
+  {
+    name: "CSS",
+    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+    level: "intermediate",
+  },
+  {
+    name: "Bootstrap",
+    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
+    level: "intermediate",
+  },
+  {
+    name: "JavaScript",
+    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    level: "intermediate",
+  },
+  {
+    name: "React",
+    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    level: "intermediate",
+  },
+  {
+    name: "Tailwind CSS",
+    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+    level: "intermediate",
+  },
+  {
+    name: "Python",
+    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    level: "intermediate",
+  },
+  {
+    name: "Django",
+    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
+    level: "intermediate",
+  },
+  {
+    name: "Figma",
+    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+    level: "intermediate",
+  },
+  {
+    name: "Canva",
+    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg",
+    level: "intermediate",
+  },
+  {
+    name: "Microsoft Tools",
+    favicon: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+    level: "intermediate",
+  },
+  {
+    name: "Node.js",
+    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    level: "basic",
+  },
+  {
+    name: "PHP",
+    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+    level: "basic",
+  },
+  {
+    name: "jQuery",
+    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg",
+    level: "basic",
+  },
+  {
+    name: "Photoshop",
+    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg",
+    level: "basic",
+  }
+];
 
   return (
     <Layout>
@@ -265,7 +250,7 @@ const Resume = () => {
                   {skill.name}
                 </span>
                 <span className="text-xs font-medium text-muted-foreground group-hover:text-primary opacity-0 group-hover:opacity-100 transition-all duration-500">
-                  {skill.proficiency}
+                  {skill.level}
                 </span>
                 <div className="w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-500"></div>
               </Card>
