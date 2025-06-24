@@ -84,7 +84,7 @@ const Layout = ({ children }: LayoutProps) => {
               <div className="flex items-center">
                 <div className="w-[180px] h-[180px] rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70 transform transition-all duration-500 hover:scale-110 hover:rotate-3 hover:shadow-2xl group cursor-pointer relative">
                   <img
-                    src="/lovable-uploads/logo.png"
+                    src="/logo.png"
                     alt="Samir Bajgain"
                     className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
                   />
