@@ -6,13 +6,10 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/',
+  base: mode === 'production' ? '/samir-bajgain/' : '/',
   server: {
     host: "::",
     port: 8080,
-    headers: {
-      'Content-Type': 'application/javascript',
-    },
   },
   plugins: [
     react(),
@@ -32,9 +29,5 @@ export default defineConfig(({ mode }) => ({
         manualChunks: undefined,
       },
     },
-  },
-  esbuild: {
-    loader: 'tsx',
-    include: /src\/.*\.[tj]sx?$/,
   },
 }));
