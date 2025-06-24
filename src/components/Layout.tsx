@@ -85,7 +85,7 @@ const Layout = ({ children }: LayoutProps) => {
                 <div className="w-[180px] h-[180px] rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70 transform transition-all duration-500 hover:scale-110 hover:rotate-3 hover:shadow-2xl group cursor-pointer relative">
                   <img
                     src="/logo.png"
-                    alt="Samir Bajgain"
+                    alt="Logo"
                     className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
