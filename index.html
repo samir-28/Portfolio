@@ -26,14 +26,4 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
-  <script>
-  const currentPath = window.location.pathname;
-  const allowedPaths = ['/', '/index.html'];
-
-  // If user is on a path other than root, force redirect to root
-  if (!allowedPaths.includes(currentPath)) {
-    window.location.replace('/');
-  }
-</script>
-
 </html>
