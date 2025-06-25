@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 
@@ -17,20 +18,17 @@ const NotFound = () => {
             allowFullScreen
           />
         </div>
-        {/* Heading */}
-
         {/* Message */}
         <p className="text-muted-foreground text-center max-w-md mb-8">
           Whoops! Looks like you took a wrong turn somewhere in the multiverse !!
-          
         </p>
 
         {/* Back to Home Button */}
         <Link
-          to="/Portfolio"
+          to="/"
           className="px-6 py-3 bg-primary text-primary-foreground font-medium rounded-md hover:bg-primary/90 transition-colors"
         >
-          Back to Portfolio
+          Back to Home
         </Link>
       </div>
     </Layout>
