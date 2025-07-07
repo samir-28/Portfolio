@@ -103,7 +103,7 @@ const Index = () => {
                   App Development
                 </h3>
                 <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300 leading-relaxed">
-                  I create high-quality mobile and web applications with modern
+                  I create high-quality mobile applications with modern
                   technologies and user-focused design.
                 </p>
               </div>
