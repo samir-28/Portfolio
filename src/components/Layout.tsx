@@ -84,7 +84,7 @@ const Layout = ({ children }: LayoutProps) => {
               <div className="flex items-center">
                 <div className="w-[180px] h-[180px] rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70 transform transition-all duration-500 hover:scale-110 hover:rotate-3 hover:shadow-2xl group cursor-pointer relative">
                   <img
-                    src="/logo.png"
+                    src="/Samir.jpg"
                     alt="Logo"
                     className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
                   />
@@ -137,7 +137,7 @@ const Layout = ({ children }: LayoutProps) => {
               <div className="flex items-center justify-between w-full">
                 <div className="w-[180px] h-[180px]rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70 transform transition-all duration-500 hover:scale-110 hover:rotate-3 hover:shadow-2xl group cursor-pointer relative">
                   <img
-                    src="/lovable-uploads/logo.png"
+                    src="/lovable-uploads/Samir.jpg"
                     alt="Samir Bajgain"
                     className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
                   />
@@ -188,7 +188,7 @@ const Layout = ({ children }: LayoutProps) => {
               <div className="flex justify-center mb-4">
                 <div className="w-[180px] h-[180px] rounded-xl overflow-hidden bg-gradient-to-br from-primary to-primary/70 transform transition-all duration-500 hover:scale-110 hover:rotate-3 hover:shadow-2xl group cursor-pointer relative">
                   <img
-                    src="/lovable-uploads/logo.png"
+                    src="/lovable-uploads/Samir.jpg"
                     alt="Samir Bajgain"
                     className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
                   />
