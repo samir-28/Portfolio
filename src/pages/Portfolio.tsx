@@ -73,8 +73,26 @@ const Portfolio = () => {
         "A simple and elegant music player app supporting playback features and a minimal UI.",
       link: "https://github.com/samir-28/MusicApp",
     },
-    {
+     {
       id: 7,
+      title: "MeroPalika",
+      category: "web",
+      image: "/lovable-uploads/Screenshot 2025-08-26 214148.png",
+      description:
+        "MeroPalika is a Django-based municipal management system designed to streamline citizen services within Nepali local government contexts.",
+      link: "https://github.com/samir-28/MeroPalika",
+    },
+     {
+      id: 8,
+      title: "Awaz ",
+      category: "web",
+      image: "/lovable-uploads/Screenshot 2025-08-26 213913.png",
+      description:
+        "A web application designed to facilitate the lodging and management of complaints.",
+      link: "https://github.com/samir-28/Awaz",
+    },
+    {
+      id: 9,
       title: "Simple Website UI",
       category: "design",
       image: "/lovable-uploads/Page.png",
@@ -83,39 +101,12 @@ const Portfolio = () => {
       link: "#",
     },
     {
-      id: 8,
+      id: 10,
       title: "Ecommerce Website Design",
       category: "web",
       image: "/lovable-uploads/hamroshop.png",
       description:
         "User-friendly and attractive e-commerce website design for an online retail business.",
-      link: "#",
-    },
-    {
-      id: 9,
-      title: "Poster Design",
-      category: "design",
-      image: "/lovable-uploads/MUSTANG.png",
-      description:
-        "Bold and dynamic car-themed poster showcasing creativity and layout balance.",
-      link: "#",
-    },
-    {
-      id: 10,
-      title: "Event Logo Design",
-      category: "design",
-      image: "/lovable-uploads/Mind.png",
-      description:
-        "Custom logo design crafted for a creative event, combining vibrant colors and modern typography.",
-      link: "#",
-    },
-    {
-      id: 11,
-      title: "Brand Logo Design",
-      category: "design",
-      image: "/lovable-uploads/PACIFIC.png",
-      description:
-        "Professional brand identity design for a corporate client, emphasizing trust and clarity.",
       link: "#",
     },
   ];
