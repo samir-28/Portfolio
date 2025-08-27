@@ -74,41 +74,6 @@ const Index = () => {
               </div>
             </div>
           </Card>
-
-          {/* Graphics Design */}
-          <Card className="p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-l-4 border-l-primary group cursor-pointer bg-card/50 backdrop-blur-sm">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                <Palette className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors duration-300">
-                  Logo Design & Graphics Design
-                </h3>
-                <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300 leading-relaxed">
-                  High-quality Logo & Graphics design as per your requirements.
-                </p>
-              </div>
-            </div>
-          </Card>
-
-          {/* App Development */}
-          <Card className="p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-l-4 border-l-primary group cursor-pointer bg-card/50 backdrop-blur-sm">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                <Smartphone className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors duration-300">
-                  App Development
-                </h3>
-                <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300 leading-relaxed">
-                  I create high-quality mobile applications with modern
-                  technologies and user-focused design.
-                </p>
-              </div>
-            </div>
-          </Card>
         </div>
       </div>
     </Layout>

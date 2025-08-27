@@ -25,16 +25,6 @@ const Resume = () => {
     level: "intermediate",
   },
   {
-    name: "React",
-    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-    level: "intermediate",
-  },
-  {
-    name: "Tailwind CSS",
-    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
-    level: "intermediate",
-  },
-  {
     name: "Python",
     favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
     level: "intermediate",
@@ -75,10 +65,16 @@ const Resume = () => {
     level: "basic",
   },
   {
-    name: "Photoshop",
-    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg",
-    level: "basic",
-  }
+  name: "Android",
+  favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg",
+  level: "basic",
+},
+{
+  name: "Firebase",
+  favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+  level: "basic",
+},
+
 ];
 
   return (
@@ -193,25 +189,6 @@ const Resume = () => {
                 <div className="relative z-10 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
                   <Briefcase className="text-white w-5 h-5" />
                 </div>
-
-                <Card className="flex-1 p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-l-4 border-l-primary group cursor-pointer bg-card/50 backdrop-blur-sm">
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
-                    <h4 className="text-lg font-semibold mb-1 sm:mb-0 group-hover:text-primary transition-colors duration-300">
-                      Freelance Graphic Designer
-                    </h4>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
-                      Present
-                    </span>
-                  </div>
-                  <p className="text-muted-foreground mb-2 font-medium text-sm">
-                    Self-employed
-                  </p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Create personal project designs, including logos, branding
-                    materials, and marketing assets. Specialize in minimalist
-                    aesthetics and clear, impactful visual storytelling.
-                  </p>
-                </Card>
               </div>
             </div>
           </div>
