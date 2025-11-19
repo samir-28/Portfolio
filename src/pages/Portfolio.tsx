@@ -12,29 +12,32 @@ interface Project {
   image: string;
   description: string;
   link: string;
+  tech?: string[];
 }
 
 const Portfolio = () => {
   const projects: Project[] = [
-     {
+    {
       id: 1,
       title: "Awaz ",
       category: "web",
-      image: "/lovable-uploads/Screenshot 2025-08-26 213913.png",
+      image: "/lovable-uploads/awaz.png",
       description:
         "A web application designed to facilitate the lodging and management of complaints.",
       link: "https://github.com/samir-28/Awaz",
+      tech: ["Django","HTML", "CSS"],
     },
     {
       id: 2,
       title: "MeroPalika",
       category: "web",
-      image: "/lovable-uploads/Screenshot 2025-08-26 214148.png",
+      image: "/lovable-uploads/meropalika.png",
       description:
         "MeroPalika is a Django-based municipal management system designed to streamline citizen services within Nepali local government contexts.",
       link: "https://github.com/samir-28/MeroPalika",
+      tech: ["Django","HTML", "CSS"],
     },
-      {
+    {
       id: 3,
       title: "AskMyPDF",
       category: "web",
@@ -42,8 +45,9 @@ const Portfolio = () => {
       description:
         "AskMyPDF is a tool that allows users to upload PDF documents and instantly ask questions about their content. It extracts the text from the file and uses that information to generate accurate answers with the help of Ollama AI.",
       link: "https://github.com/samir-28/AskMyPDF",
+      tech: [".NET", "Bootstrap","JavaScript"],
     },
-      {
+    {
       id: 4,
       title: "E-commerce Website",
       category: "web",
@@ -51,6 +55,7 @@ const Portfolio = () => {
       description:
         "A full-featured online store with product listings, cart functionality, and checkout system built using modern web tools.",
       link: "https://github.com/samir-28/MediDoorF",
+      tech: ["Django","Bootstrap"],
     },
     {
       id: 5,
@@ -61,6 +66,7 @@ const Portfolio = () => {
       description:
         "A Django-powered platform to manage social media posts & user engagement.",
       link: "https://github.com/samir-28/SocialMediaManagementApp",
+      tech: ["DRF", "Python"],
     },
     {
       id: 6,
@@ -70,16 +76,18 @@ const Portfolio = () => {
       description:
         "A clean and responsive blog platform built with Django, featuring post creation, editing, and user-friendly UI.",
       link: "https://github.com/samir-28/BlogApp",
+      tech: ["Django"],
     },
-    
+
     {
       id: 7,
       title: "To-Do-Task",
       category: "web",
-      image: "/lovable-uploads/Screenshot 2025-06-21 212755.png",
+      image: "/lovable-uploads/todo.png",
       description:
         "A task management web app built with Django for adding, updating, and tracking daily tasks with user-friendly UI and session-based login.",
       link: "https://github.com/samir-28/ToDoTask-django-",
+      tech: ["Django"],
     },
     {
       id: 8,
@@ -89,6 +97,7 @@ const Portfolio = () => {
       description:
         "A smart travel-packing assistant that helps users organize and plan items for their trips effortlessly.",
       link: "https://github.com/samir-28/PickMeProject",
+      tech: ["Java","XML","Android Studio"],
     },
     {
       id: 9,
@@ -99,6 +108,7 @@ const Portfolio = () => {
       description:
         "A simple and elegant music player app supporting playback features and a minimal UI.",
       link: "https://github.com/samir-28/MusicApp",
+      tech: ["Java","XML","Android Studio"],
     },
     {
       id: 10,
@@ -108,6 +118,7 @@ const Portfolio = () => {
       description:
         "Modern and minimal landing page UI design concept with responsive layout and visual clarity.",
       link: "#",
+      tech: ["Figma", "UI/UX Design"],
     },
     {
       id: 11,
@@ -117,6 +128,7 @@ const Portfolio = () => {
       description:
         "User-friendly and attractive e-commerce website design for an online retail business.",
       link: "#",
+      tech: [ "HTML", "CSS"], 
     },
   ];
 
@@ -220,10 +232,18 @@ const Portfolio = () => {
                 <p className="text-sm text-muted-foreground mb-3">
                   {project.description}
                 </p>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 flex-wrap">
                   <div className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full capitalize font-medium">
                     {project.category}
                   </div>
+                  {project.tech?.map((item, index) => (
+                    <span
+                      key={index}
+                      className="px-2 py-1 bg-muted text-xs text-muted-foreground rounded-full border"
+                    >
+                      {item}
+                    </span>
+                  ))}
                 </div>
               </div>
             </Card>
@@ -276,12 +296,17 @@ const Portfolio = () => {
                   {selectedProject.description}
                 </p>
 
-                <div className="grid md:grid-cols-2 gap-4 mb-6">
-                  <div className="p-4 bg-muted/50 rounded-lg">
-                    <p className="font-medium text-primary">Category</p>
-                    <p className="text-muted-foreground capitalize">
-                      {selectedProject.category}
-                    </p>
+                <div className="p-4 bg-muted/50 rounded-lg">
+                  <p className="font-medium text-primary">Tech Used</p>
+                  <div className="flex flex-wrap gap-2 mt-1">
+                    {selectedProject.tech?.map((t, i) => (
+                      <span
+                        key={i}
+                        className="px-2 py-1 bg-background border text-xs rounded-md"
+                      >
+                        {t}
+                      </span>
+                    ))}
                   </div>
                 </div>
                 <p className="mb-6 leading-relaxed">

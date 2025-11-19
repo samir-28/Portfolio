@@ -37,7 +37,7 @@ const Resume = () => {
     {
       name: ".NET",
       favicon:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnet/dotnet-original.svg",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg",
     },
     {
       name: "Figma",
