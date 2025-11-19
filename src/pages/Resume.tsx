@@ -5,77 +5,81 @@ import { BookOpen, Briefcase, Award, Code } from "lucide-react";
 const Resume = () => {
   const skillsWithFavicons = [
     {
-    name: "HTML",
-    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-    level: "intermediate",
-  },
-  {
-    name: "CSS",
-    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-    level: "intermediate",
-  },
-  {
-    name: "Bootstrap",
-    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
-    level: "intermediate",
-  },
-  {
-    name: "JavaScript",
-    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-    level: "intermediate",
-  },
-  {
-    name: "Python",
-    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-    level: "intermediate",
-  },
-  {
-    name: "Django",
-    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
-    level: "intermediate",
-  },
-  {
-    name: "Figma",
-    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
-    level: "intermediate",
-  },
-  {
-    name: "Canva",
-    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg",
-    level: "intermediate",
-  },
-  {
-    name: "Microsoft Tools",
-    favicon: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
-    level: "intermediate",
-  },
-  {
-    name: "Node.js",
-    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-    level: "basic",
-  },
-  {
-    name: "PHP",
-    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
-    level: "basic",
-  },
-  {
-    name: "jQuery",
-    favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg",
-    level: "basic",
-  },
-  {
-  name: "Android",
-  favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg",
-  level: "basic",
-},
-{
-  name: "Firebase",
-  favicon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
-  level: "basic",
-},
-
-];
+      name: "HTML",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    },
+    {
+      name: "CSS",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+    },
+    {
+      name: "Bootstrap",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
+    },
+    {
+      name: "JavaScript",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    },
+    {
+      name: "Python",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    },
+    {
+      name: "Django",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
+    },
+    {
+      name: ".NET",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnet/dotnet-original.svg",
+    },
+    {
+      name: "Figma",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+    },
+    {
+      name: "Canva",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg",
+    },
+    {
+      name: "Microsoft Tools",
+      favicon:
+        "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+    },
+    {
+      name: "Node.js",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    },
+    {
+      name: "PHP",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+    },
+    {
+      name: "jQuery",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg",
+    },
+    {
+      name: "Android",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg",
+    },
+    {
+      name: "Firebase",
+      favicon:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+    },
+  ];
 
   return (
     <Layout>
@@ -168,7 +172,7 @@ const Resume = () => {
                 <Card className="flex-1 p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-l-4 border-l-primary group cursor-pointer bg-card/50 backdrop-blur-sm">
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
                     <h4 className="text-lg font-semibold mb-1 sm:mb-0 group-hover:text-primary transition-colors duration-300">
-                      Freelance Django Developer
+                      Independent Developer – Self-Initiated Projects
                     </h4>
                     <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
                       Present
@@ -179,16 +183,9 @@ const Resume = () => {
                   </p>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Worked on personal website projects, emphasizing user
-                    experience and responsive design using HTML, CSS, JavaScript
-                    and Django.
+                    experience and responsive design using HTML, CSS, Bootstrap , Js, Django and .NET.
                   </p>
                 </Card>
-              </div>
-
-              <div className="relative flex items-start gap-4">
-                <div className="relative z-10 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-md">
-                  <Briefcase className="text-white w-5 h-5" />
-                </div>
               </div>
             </div>
           </div>
@@ -226,9 +223,7 @@ const Resume = () => {
                 <span className="text-sm font-medium group-hover:text-primary group-hover:font-semibold transition-all duration-300">
                   {skill.name}
                 </span>
-                <span className="text-xs font-medium text-muted-foreground group-hover:text-primary opacity-0 group-hover:opacity-100 transition-all duration-500">
-                  {skill.level}
-                </span>
+
                 <div className="w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-500"></div>
               </Card>
             ))}

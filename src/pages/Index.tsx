@@ -11,27 +11,17 @@ const Index = () => {
         <div className="w-12 h-1 bg-primary mb-6"></div>
 
         <div className="space-y-6 text-muted-foreground leading-relaxed text-justify text-base">
-          <p
-            className="animate-fade-in transition-all duration-700 hover:text-foreground cursor-pointer transform hover:scale-[1.02]"
-            style={{ animationDelay: "0.2s" }}
-          >
-            Hi! I'm Samir Bajgain, an undergraduate CSIT student at Tribhuvan
-            University with a strong passion for web development, especially
-            using Django. I enjoy solving real-world problems through clean,
-            scalable code and have experience building full-stack applications
-            with Django and Django REST Framework. I'm also familiar with
-            frontend tools like HTML, CSS, JavaScript, and Bootstrap, and I love
-            crafting solutions that are both functional and user-friendly.
-          </p>
-
-          <p
-            className="animate-fade-in transition-all duration-700 hover:text-foreground cursor-pointer transform hover:scale-[1.02]"
-            style={{ animationDelay: "0.4s" }}
-          >
-            Outside coding, I’m a sports enthusiast who also values good design
-            and user experience. I believe in continuous learning and building
-            things that reflect creativity, purpose, and growth.
-          </p>
+          {["0.2s", "0.4s"].map((delay, index) => (
+            <p
+              key={index}
+              className="animate-fade-in transition-all duration-700 hover:text-foreground cursor-pointer transform hover:scale-[1.02]"
+              style={{ animationDelay: delay }}
+            >
+              {index === 0
+                ? "Hi! I'm Samir Bajgain, an undergraduate CSIT student at Tribhuvan University with a strong passion for web development, especially using Django and .NET. I enjoy solving real-world problems through clean, scalable code and have experience building full-stack applications with Django ,Django REST Framework and .NET Core. I'm also familiar with frontend tools like HTML, CSS, JavaScript, and Bootstrap, and I love crafting solutions that are both functional and user-friendly."
+                : "Outside coding, I’m a sports enthusiast who also values good design and user experience. I believe in continuous learning and building things that reflect creativity, purpose, and growth."}
+            </p>
+          ))}
         </div>
       </div>
 

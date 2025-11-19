@@ -16,36 +16,34 @@ interface Project {
 
 const Portfolio = () => {
   const projects: Project[] = [
-    {
+     {
       id: 1,
-      title: "Personal Blog Website",
+      title: "Awaz ",
       category: "web",
-      image: "/lovable-uploads/Blog.png",
+      image: "/lovable-uploads/Screenshot 2025-08-26 213913.png",
       description:
-        "A clean and responsive blog platform built with Django, featuring post creation, editing, and user-friendly UI.",
-      link: "https://github.com/samir-28/BlogApp",
+        "A web application designed to facilitate the lodging and management of complaints.",
+      link: "https://github.com/samir-28/Awaz",
     },
     {
       id: 2,
-      title: "SocialMediaManagementPlatform",
+      title: "MeroPalika",
       category: "web",
-      image:
-        "https://media.istockphoto.com/id/1070326848/vector/mix-race-people-avatar-social-media-global-communication-concept-internet-network-connection.jpg?s=612x612&w=0&k=20&c=krJeo_Mg1SO7Seo7tAN_lMqJu5plh5jsLBp2h4n2ZSw=",
+      image: "/lovable-uploads/Screenshot 2025-08-26 214148.png",
       description:
-        "A Django-powered platform to manage social media posts & user engagement.",
-      link: "https://github.com/samir-28/SocialMediaManagementApp",
+        "MeroPalika is a Django-based municipal management system designed to streamline citizen services within Nepali local government contexts.",
+      link: "https://github.com/samir-28/MeroPalika",
     },
-    {
+      {
       id: 3,
-      title: "To-Do-Task",
+      title: "AskMyPDF",
       category: "web",
-      image: "/lovable-uploads/Screenshot 2025-06-21 212755.png",
+      image: "/lovable-uploads/askmypdf.png",
       description:
-        "A task management web app built with Django for adding, updating, and tracking daily tasks with user-friendly UI and session-based login.",
-      link: "https://github.com/samir-28/ToDoTask-django-",
+        "AskMyPDF is a tool that allows users to upload PDF documents and instantly ask questions about their content. It extracts the text from the file and uses that information to generate accurate answers with the help of Ollama AI.",
+      link: "https://github.com/samir-28/AskMyPDF",
     },
-
-    {
+      {
       id: 4,
       title: "E-commerce Website",
       category: "web",
@@ -56,6 +54,35 @@ const Portfolio = () => {
     },
     {
       id: 5,
+      title: "SocialMediaManagementPlatform",
+      category: "web",
+      image:
+        "https://media.istockphoto.com/id/1070326848/vector/mix-race-people-avatar-social-media-global-communication-concept-internet-network-connection.jpg?s=612x612&w=0&k=20&c=krJeo_Mg1SO7Seo7tAN_lMqJu5plh5jsLBp2h4n2ZSw=",
+      description:
+        "A Django-powered platform to manage social media posts & user engagement.",
+      link: "https://github.com/samir-28/SocialMediaManagementApp",
+    },
+    {
+      id: 6,
+      title: "Personal Blog Website",
+      category: "web",
+      image: "/lovable-uploads/Blog.png",
+      description:
+        "A clean and responsive blog platform built with Django, featuring post creation, editing, and user-friendly UI.",
+      link: "https://github.com/samir-28/BlogApp",
+    },
+    
+    {
+      id: 7,
+      title: "To-Do-Task",
+      category: "web",
+      image: "/lovable-uploads/Screenshot 2025-06-21 212755.png",
+      description:
+        "A task management web app built with Django for adding, updating, and tracking daily tasks with user-friendly UI and session-based login.",
+      link: "https://github.com/samir-28/ToDoTask-django-",
+    },
+    {
+      id: 8,
       title: "Pick Me App",
       category: "app",
       image: "/lovable-uploads/pickme.png",
@@ -64,7 +91,7 @@ const Portfolio = () => {
       link: "https://github.com/samir-28/PickMeProject",
     },
     {
-      id: 6,
+      id: 9,
       title: "Music App",
       category: "app",
       image:
@@ -73,26 +100,8 @@ const Portfolio = () => {
         "A simple and elegant music player app supporting playback features and a minimal UI.",
       link: "https://github.com/samir-28/MusicApp",
     },
-     {
-      id: 7,
-      title: "MeroPalika",
-      category: "web",
-      image: "/lovable-uploads/Screenshot 2025-08-26 214148.png",
-      description:
-        "MeroPalika is a Django-based municipal management system designed to streamline citizen services within Nepali local government contexts.",
-      link: "https://github.com/samir-28/MeroPalika",
-    },
-     {
-      id: 8,
-      title: "Awaz ",
-      category: "web",
-      image: "/lovable-uploads/Screenshot 2025-08-26 213913.png",
-      description:
-        "A web application designed to facilitate the lodging and management of complaints.",
-      link: "https://github.com/samir-28/Awaz",
-    },
     {
-      id: 9,
+      id: 10,
       title: "Simple Website UI",
       category: "design",
       image: "/lovable-uploads/Page.png",
@@ -101,7 +110,7 @@ const Portfolio = () => {
       link: "#",
     },
     {
-      id: 10,
+      id: 11,
       title: "Ecommerce Website Design",
       category: "web",
       image: "/lovable-uploads/hamroshop.png",
