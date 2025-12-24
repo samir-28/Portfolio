@@ -10,11 +10,14 @@ import NotFound from "./pages/NotFound";
 import Resume from "./pages/Resume";
 import Portfolio from "./pages/Portfolio";
 import Message from "./pages/Message";
+import SnowBackground from "./components/SpaceBackground";
+
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
+    <SnowBackground />
     <ThemeProvider>
       <TooltipProvider>
         <Toaster />
